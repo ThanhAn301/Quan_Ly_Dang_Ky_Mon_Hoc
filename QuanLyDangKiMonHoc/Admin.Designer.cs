@@ -39,7 +39,6 @@ namespace QuanLyDangKiMonHoc
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdateStudent = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.btnClearStudent = new System.Windows.Forms.Button();
             this.tbStudyStatus = new System.Windows.Forms.TextBox();
             this.tbCredits = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,7 +52,6 @@ namespace QuanLyDangKiMonHoc
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdateTeacher = new System.Windows.Forms.Button();
             this.btnAddTeacher = new System.Windows.Forms.Button();
-            this.btnClearTeacher = new System.Windows.Forms.Button();
             this.tbDegree = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -77,7 +75,6 @@ namespace QuanLyDangKiMonHoc
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdateCourse = new System.Windows.Forms.Button();
             this.btnAddCourse = new System.Windows.Forms.Button();
-            this.btnClearCourse = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -96,7 +93,6 @@ namespace QuanLyDangKiMonHoc
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdateDepartment = new System.Windows.Forms.Button();
             this.btnAddDepart = new System.Windows.Forms.Button();
-            this.btnClearDepartment = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -131,7 +127,6 @@ namespace QuanLyDangKiMonHoc
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdateClass = new System.Windows.Forms.Button();
             this.btnAddClass = new System.Windows.Forms.Button();
-            this.btnClearClass = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -158,7 +153,6 @@ namespace QuanLyDangKiMonHoc
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnUpdateParticipant = new System.Windows.Forms.Button();
-            this.btnClearParticipant = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
@@ -167,7 +161,6 @@ namespace QuanLyDangKiMonHoc
             this.cbID = new System.Windows.Forms.ComboBox();
             this.btnAddParEmail = new System.Windows.Forms.Button();
             this.btnUpdateParEmail = new System.Windows.Forms.Button();
-            this.btnClearParEmail = new System.Windows.Forms.Button();
             this.tbEmailParticipant = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
@@ -190,11 +183,11 @@ namespace QuanLyDangKiMonHoc
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.btnUpdateParPhone = new System.Windows.Forms.Button();
-            this.btnClearParPhone = new System.Windows.Forms.Button();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.btnLogout = new System.Windows.Forms.Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudent)).BeginInit();
@@ -233,7 +226,7 @@ namespace QuanLyDangKiMonHoc
             this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(1160, 434);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1174, 434);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -260,7 +253,6 @@ namespace QuanLyDangKiMonHoc
             this.tabPage1.Controls.Add(this.dgvStudent);
             this.tabPage1.Controls.Add(this.btnUpdateStudent);
             this.tabPage1.Controls.Add(this.btnAddStudent);
-            this.tabPage1.Controls.Add(this.btnClearStudent);
             this.tabPage1.Controls.Add(this.tbStudyStatus);
             this.tabPage1.Controls.Add(this.tbCredits);
             this.tabPage1.Controls.Add(this.label2);
@@ -271,7 +263,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(972, 426);
+            this.tabPage1.Size = new System.Drawing.Size(986, 426);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Student";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -279,7 +271,7 @@ namespace QuanLyDangKiMonHoc
             // cbStudentID
             // 
             this.cbStudentID.FormattingEnabled = true;
-            this.cbStudentID.Location = new System.Drawing.Point(332, 278);
+            this.cbStudentID.Location = new System.Drawing.Point(387, 264);
             this.cbStudentID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbStudentID.Name = "cbStudentID";
             this.cbStudentID.Size = new System.Drawing.Size(151, 24);
@@ -330,7 +322,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateStudent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateStudent.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateStudent.Location = new System.Drawing.Point(726, 382);
+            this.btnUpdateStudent.Location = new System.Drawing.Point(740, 382);
             this.btnUpdateStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateStudent.Name = "btnUpdateStudent";
             this.btnUpdateStudent.Size = new System.Drawing.Size(117, 39);
@@ -346,7 +338,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddStudent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddStudent.ForeColor = System.Drawing.Color.White;
-            this.btnAddStudent.Location = new System.Drawing.Point(849, 382);
+            this.btnAddStudent.Location = new System.Drawing.Point(863, 382);
             this.btnAddStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(117, 39);
@@ -355,26 +347,10 @@ namespace QuanLyDangKiMonHoc
             this.btnAddStudent.UseVisualStyleBackColor = false;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // btnClearStudent
-            // 
-            this.btnClearStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearStudent.BackColor = System.Drawing.Color.Orange;
-            this.btnClearStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearStudent.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearStudent.ForeColor = System.Drawing.Color.White;
-            this.btnClearStudent.Location = new System.Drawing.Point(603, 382);
-            this.btnClearStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearStudent.Name = "btnClearStudent";
-            this.btnClearStudent.Size = new System.Drawing.Size(117, 39);
-            this.btnClearStudent.TabIndex = 29;
-            this.btnClearStudent.Text = "Clear";
-            this.btnClearStudent.UseVisualStyleBackColor = false;
-            this.btnClearStudent.Click += new System.EventHandler(this.btnClearStudent_Click);
-            // 
             // tbStudyStatus
             // 
             this.tbStudyStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbStudyStatus.Location = new System.Drawing.Point(332, 385);
+            this.tbStudyStatus.Location = new System.Drawing.Point(394, 379);
             this.tbStudyStatus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbStudyStatus.Name = "tbStudyStatus";
             this.tbStudyStatus.Size = new System.Drawing.Size(151, 22);
@@ -383,7 +359,7 @@ namespace QuanLyDangKiMonHoc
             // tbCredits
             // 
             this.tbCredits.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCredits.Location = new System.Drawing.Point(332, 336);
+            this.tbCredits.Location = new System.Drawing.Point(394, 322);
             this.tbCredits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCredits.Name = "tbCredits";
             this.tbCredits.Size = new System.Drawing.Size(151, 22);
@@ -395,7 +371,7 @@ namespace QuanLyDangKiMonHoc
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label2.Location = new System.Drawing.Point(160, 382);
+            this.label2.Location = new System.Drawing.Point(211, 376);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 23);
             this.label2.TabIndex = 22;
@@ -407,7 +383,7 @@ namespace QuanLyDangKiMonHoc
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label1.Location = new System.Drawing.Point(208, 336);
+            this.label1.Location = new System.Drawing.Point(258, 319);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 23);
             this.label1.TabIndex = 20;
@@ -419,7 +395,7 @@ namespace QuanLyDangKiMonHoc
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label3.Location = new System.Drawing.Point(177, 281);
+            this.label3.Location = new System.Drawing.Point(228, 265);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 23);
             this.label3.TabIndex = 18;
@@ -440,7 +416,6 @@ namespace QuanLyDangKiMonHoc
             this.tabPage2.Controls.Add(this.dgvTeacher);
             this.tabPage2.Controls.Add(this.btnUpdateTeacher);
             this.tabPage2.Controls.Add(this.btnAddTeacher);
-            this.tabPage2.Controls.Add(this.btnClearTeacher);
             this.tabPage2.Controls.Add(this.tbDegree);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.label6);
@@ -449,7 +424,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(972, 426);
+            this.tabPage2.Size = new System.Drawing.Size(977, 426);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Teacher";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -457,7 +432,7 @@ namespace QuanLyDangKiMonHoc
             // cbTeacherID
             // 
             this.cbTeacherID.FormattingEnabled = true;
-            this.cbTeacherID.Location = new System.Drawing.Point(319, 289);
+            this.cbTeacherID.Location = new System.Drawing.Point(392, 289);
             this.cbTeacherID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTeacherID.Name = "cbTeacherID";
             this.cbTeacherID.Size = new System.Drawing.Size(161, 24);
@@ -474,7 +449,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvTeacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvTeacher.Name = "dgvTeacher";
             this.dgvTeacher.RowHeadersWidth = 51;
-            this.dgvTeacher.Size = new System.Drawing.Size(891, 210);
+            this.dgvTeacher.Size = new System.Drawing.Size(969, 210);
             this.dgvTeacher.TabIndex = 43;
             this.dgvTeacher.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTeacher_CellContentClick);
             this.dgvTeacher.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvTeacher_KeyDown);
@@ -500,7 +475,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateTeacher.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateTeacher.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateTeacher.Location = new System.Drawing.Point(664, 380);
+            this.btnUpdateTeacher.Location = new System.Drawing.Point(730, 380);
             this.btnUpdateTeacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateTeacher.Name = "btnUpdateTeacher";
             this.btnUpdateTeacher.Size = new System.Drawing.Size(117, 39);
@@ -516,7 +491,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTeacher.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTeacher.ForeColor = System.Drawing.Color.White;
-            this.btnAddTeacher.Location = new System.Drawing.Point(788, 380);
+            this.btnAddTeacher.Location = new System.Drawing.Point(853, 380);
             this.btnAddTeacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddTeacher.Name = "btnAddTeacher";
             this.btnAddTeacher.Size = new System.Drawing.Size(117, 39);
@@ -525,26 +500,10 @@ namespace QuanLyDangKiMonHoc
             this.btnAddTeacher.UseVisualStyleBackColor = false;
             this.btnAddTeacher.Click += new System.EventHandler(this.btnAddTeacher_Click);
             // 
-            // btnClearTeacher
-            // 
-            this.btnClearTeacher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearTeacher.BackColor = System.Drawing.Color.Orange;
-            this.btnClearTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearTeacher.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearTeacher.ForeColor = System.Drawing.Color.White;
-            this.btnClearTeacher.Location = new System.Drawing.Point(541, 380);
-            this.btnClearTeacher.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearTeacher.Name = "btnClearTeacher";
-            this.btnClearTeacher.Size = new System.Drawing.Size(117, 39);
-            this.btnClearTeacher.TabIndex = 40;
-            this.btnClearTeacher.Text = "Clear";
-            this.btnClearTeacher.UseVisualStyleBackColor = false;
-            this.btnClearTeacher.ClientSizeChanged += new System.EventHandler(this.btnClearTeacher_Click);
-            // 
             // tbDegree
             // 
             this.tbDegree.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbDegree.Location = new System.Drawing.Point(319, 351);
+            this.tbDegree.Location = new System.Drawing.Point(394, 354);
             this.tbDegree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDegree.Name = "tbDegree";
             this.tbDegree.Size = new System.Drawing.Size(161, 22);
@@ -556,7 +515,7 @@ namespace QuanLyDangKiMonHoc
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label5.Location = new System.Drawing.Point(197, 351);
+            this.label5.Location = new System.Drawing.Point(278, 354);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(94, 23);
             this.label5.TabIndex = 36;
@@ -568,7 +527,7 @@ namespace QuanLyDangKiMonHoc
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label6.Location = new System.Drawing.Point(165, 289);
+            this.label6.Location = new System.Drawing.Point(246, 290);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(126, 23);
             this.label6.TabIndex = 34;
@@ -580,7 +539,7 @@ namespace QuanLyDangKiMonHoc
             this.panel2.Location = new System.Drawing.Point(0, 219);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(893, 11);
+            this.panel2.Size = new System.Drawing.Size(972, 11);
             this.panel2.TabIndex = 33;
             // 
             // tabPage3
@@ -597,7 +556,6 @@ namespace QuanLyDangKiMonHoc
             this.tabPage3.Controls.Add(this.dgvCourse);
             this.tabPage3.Controls.Add(this.btnUpdateCourse);
             this.tabPage3.Controls.Add(this.btnAddCourse);
-            this.tabPage3.Controls.Add(this.btnClearCourse);
             this.tabPage3.Controls.Add(this.label4);
             this.tabPage3.Controls.Add(this.label7);
             this.tabPage3.Controls.Add(this.label8);
@@ -605,7 +563,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage3.Location = new System.Drawing.Point(184, 4);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(972, 426);
+            this.tabPage3.Size = new System.Drawing.Size(973, 426);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Course";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -670,7 +628,7 @@ namespace QuanLyDangKiMonHoc
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label11.Location = new System.Drawing.Point(453, 346);
+            this.label11.Location = new System.Drawing.Point(459, 345);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(200, 23);
             this.label11.TabIndex = 47;
@@ -682,7 +640,7 @@ namespace QuanLyDangKiMonHoc
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label10.Location = new System.Drawing.Point(73, 340);
+            this.label10.Location = new System.Drawing.Point(78, 342);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(137, 23);
             this.label10.TabIndex = 46;
@@ -718,7 +676,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvCourse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCourse.Name = "dgvCourse";
             this.dgvCourse.RowHeadersWidth = 51;
-            this.dgvCourse.Size = new System.Drawing.Size(905, 210);
+            this.dgvCourse.Size = new System.Drawing.Size(964, 210);
             this.dgvCourse.TabIndex = 43;
             this.dgvCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourse_CellContentClick);
             this.dgvCourse.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCourse_KeyDown);
@@ -772,7 +730,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateCourse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateCourse.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateCourse.Location = new System.Drawing.Point(667, 383);
+            this.btnUpdateCourse.Location = new System.Drawing.Point(727, 385);
             this.btnUpdateCourse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateCourse.Name = "btnUpdateCourse";
             this.btnUpdateCourse.Size = new System.Drawing.Size(117, 39);
@@ -788,7 +746,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCourse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddCourse.ForeColor = System.Drawing.Color.White;
-            this.btnAddCourse.Location = new System.Drawing.Point(789, 383);
+            this.btnAddCourse.Location = new System.Drawing.Point(850, 385);
             this.btnAddCourse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddCourse.Name = "btnAddCourse";
             this.btnAddCourse.Size = new System.Drawing.Size(117, 39);
@@ -797,29 +755,13 @@ namespace QuanLyDangKiMonHoc
             this.btnAddCourse.UseVisualStyleBackColor = false;
             this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
             // 
-            // btnClearCourse
-            // 
-            this.btnClearCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearCourse.BackColor = System.Drawing.Color.Orange;
-            this.btnClearCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearCourse.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearCourse.ForeColor = System.Drawing.Color.White;
-            this.btnClearCourse.Location = new System.Drawing.Point(544, 383);
-            this.btnClearCourse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearCourse.Name = "btnClearCourse";
-            this.btnClearCourse.Size = new System.Drawing.Size(117, 39);
-            this.btnClearCourse.TabIndex = 40;
-            this.btnClearCourse.Text = "Clear";
-            this.btnClearCourse.UseVisualStyleBackColor = false;
-            this.btnClearCourse.Click += new System.EventHandler(this.btnClearCourse_Click);
-            // 
             // label4
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label4.Location = new System.Drawing.Point(569, 300);
+            this.label4.Location = new System.Drawing.Point(569, 299);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 23);
             this.label4.TabIndex = 38;
@@ -831,7 +773,7 @@ namespace QuanLyDangKiMonHoc
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label7.Location = new System.Drawing.Point(492, 257);
+            this.label7.Location = new System.Drawing.Point(499, 256);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(160, 23);
             this.label7.TabIndex = 36;
@@ -856,7 +798,7 @@ namespace QuanLyDangKiMonHoc
             this.panel3.Location = new System.Drawing.Point(0, 222);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(908, 11);
+            this.panel3.Size = new System.Drawing.Size(967, 11);
             this.panel3.TabIndex = 33;
             // 
             // tabPage6
@@ -870,14 +812,13 @@ namespace QuanLyDangKiMonHoc
             this.tabPage6.Controls.Add(this.dgvDepartment);
             this.tabPage6.Controls.Add(this.btnUpdateDepartment);
             this.tabPage6.Controls.Add(this.btnAddDepart);
-            this.tabPage6.Controls.Add(this.btnClearDepartment);
             this.tabPage6.Controls.Add(this.label16);
             this.tabPage6.Controls.Add(this.label17);
             this.tabPage6.Controls.Add(this.panel4);
             this.tabPage6.Location = new System.Drawing.Point(184, 4);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(972, 426);
+            this.tabPage6.Size = new System.Drawing.Size(973, 426);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Department";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -958,7 +899,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDepartment.Name = "dgvDepartment";
             this.dgvDepartment.RowHeadersWidth = 51;
-            this.dgvDepartment.Size = new System.Drawing.Size(904, 210);
+            this.dgvDepartment.Size = new System.Drawing.Size(964, 210);
             this.dgvDepartment.TabIndex = 43;
             this.dgvDepartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentClick);
             this.dgvDepartment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvDepartment_KeyDown);
@@ -998,7 +939,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateDepartment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateDepartment.Location = new System.Drawing.Point(667, 383);
+            this.btnUpdateDepartment.Location = new System.Drawing.Point(727, 383);
             this.btnUpdateDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateDepartment.Name = "btnUpdateDepartment";
             this.btnUpdateDepartment.Size = new System.Drawing.Size(117, 39);
@@ -1014,7 +955,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddDepart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDepart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDepart.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepart.Location = new System.Drawing.Point(789, 383);
+            this.btnAddDepart.Location = new System.Drawing.Point(850, 383);
             this.btnAddDepart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddDepart.Name = "btnAddDepart";
             this.btnAddDepart.Size = new System.Drawing.Size(117, 39);
@@ -1023,29 +964,13 @@ namespace QuanLyDangKiMonHoc
             this.btnAddDepart.UseVisualStyleBackColor = false;
             this.btnAddDepart.Click += new System.EventHandler(this.btnAddDepart_Click);
             // 
-            // btnClearDepartment
-            // 
-            this.btnClearDepartment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearDepartment.BackColor = System.Drawing.Color.Orange;
-            this.btnClearDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearDepartment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnClearDepartment.Location = new System.Drawing.Point(544, 383);
-            this.btnClearDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearDepartment.Name = "btnClearDepartment";
-            this.btnClearDepartment.Size = new System.Drawing.Size(117, 39);
-            this.btnClearDepartment.TabIndex = 40;
-            this.btnClearDepartment.Text = "Clear";
-            this.btnClearDepartment.UseVisualStyleBackColor = false;
-            this.btnClearDepartment.Click += new System.EventHandler(this.btnClearDepartment_Click);
-            // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label16.Location = new System.Drawing.Point(567, 274);
+            this.label16.Location = new System.Drawing.Point(585, 274);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(74, 23);
             this.label16.TabIndex = 36;
@@ -1057,7 +982,7 @@ namespace QuanLyDangKiMonHoc
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label17.Location = new System.Drawing.Point(473, 322);
+            this.label17.Location = new System.Drawing.Point(492, 322);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(167, 23);
             this.label17.TabIndex = 34;
@@ -1070,7 +995,7 @@ namespace QuanLyDangKiMonHoc
             this.panel4.Location = new System.Drawing.Point(0, 222);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(907, 11);
+            this.panel4.Size = new System.Drawing.Size(967, 11);
             this.panel4.TabIndex = 33;
             // 
             // tabPage4
@@ -1095,7 +1020,6 @@ namespace QuanLyDangKiMonHoc
             this.tabPage4.Controls.Add(this.dgvClass);
             this.tabPage4.Controls.Add(this.btnUpdateClass);
             this.tabPage4.Controls.Add(this.btnAddClass);
-            this.tabPage4.Controls.Add(this.btnClearClass);
             this.tabPage4.Controls.Add(this.label21);
             this.tabPage4.Controls.Add(this.label22);
             this.tabPage4.Controls.Add(this.label23);
@@ -1103,7 +1027,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage4.Location = new System.Drawing.Point(184, 4);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(972, 426);
+            this.tabPage4.Size = new System.Drawing.Size(973, 426);
             this.tabPage4.TabIndex = 6;
             this.tabPage4.Text = "Class";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1111,7 +1035,7 @@ namespace QuanLyDangKiMonHoc
             // cbSubject
             // 
             this.cbSubject.FormattingEnabled = true;
-            this.cbSubject.Location = new System.Drawing.Point(165, 302);
+            this.cbSubject.Location = new System.Drawing.Point(165, 283);
             this.cbSubject.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbSubject.Name = "cbSubject";
             this.cbSubject.Size = new System.Drawing.Size(140, 24);
@@ -1120,7 +1044,7 @@ namespace QuanLyDangKiMonHoc
             // cbTeacherClass
             // 
             this.cbTeacherClass.FormattingEnabled = true;
-            this.cbTeacherClass.Location = new System.Drawing.Point(767, 261);
+            this.cbTeacherClass.Location = new System.Drawing.Point(804, 239);
             this.cbTeacherClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTeacherClass.Name = "cbTeacherClass";
             this.cbTeacherClass.Size = new System.Drawing.Size(139, 24);
@@ -1129,7 +1053,7 @@ namespace QuanLyDangKiMonHoc
             // tbMaximumStudent
             // 
             this.tbMaximumStudent.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbMaximumStudent.Location = new System.Drawing.Point(269, 388);
+            this.tbMaximumStudent.Location = new System.Drawing.Point(357, 390);
             this.tbMaximumStudent.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMaximumStudent.Name = "tbMaximumStudent";
             this.tbMaximumStudent.Size = new System.Drawing.Size(140, 22);
@@ -1141,7 +1065,7 @@ namespace QuanLyDangKiMonHoc
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label25.Location = new System.Drawing.Point(53, 389);
+            this.label25.Location = new System.Drawing.Point(139, 390);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(197, 23);
             this.label25.TabIndex = 56;
@@ -1150,7 +1074,7 @@ namespace QuanLyDangKiMonHoc
             // tbStartTime
             // 
             this.tbStartTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbStartTime.Location = new System.Drawing.Point(477, 345);
+            this.tbStartTime.Location = new System.Drawing.Point(477, 340);
             this.tbStartTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbStartTime.Name = "tbStartTime";
             this.tbStartTime.Size = new System.Drawing.Size(140, 22);
@@ -1159,7 +1083,7 @@ namespace QuanLyDangKiMonHoc
             // tbDay
             // 
             this.tbDay.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbDay.Location = new System.Drawing.Point(477, 305);
+            this.tbDay.Location = new System.Drawing.Point(477, 287);
             this.tbDay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDay.Name = "tbDay";
             this.tbDay.Size = new System.Drawing.Size(140, 22);
@@ -1168,7 +1092,7 @@ namespace QuanLyDangKiMonHoc
             // tbClassRoom
             // 
             this.tbClassRoom.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbClassRoom.Location = new System.Drawing.Point(477, 256);
+            this.tbClassRoom.Location = new System.Drawing.Point(477, 235);
             this.tbClassRoom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbClassRoom.Name = "tbClassRoom";
             this.tbClassRoom.Size = new System.Drawing.Size(140, 22);
@@ -1180,7 +1104,7 @@ namespace QuanLyDangKiMonHoc
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label12.Location = new System.Drawing.Point(361, 346);
+            this.label12.Location = new System.Drawing.Point(365, 340);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(106, 23);
             this.label12.TabIndex = 54;
@@ -1192,7 +1116,7 @@ namespace QuanLyDangKiMonHoc
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label15.Location = new System.Drawing.Point(321, 303);
+            this.label15.Location = new System.Drawing.Point(324, 284);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(147, 23);
             this.label15.TabIndex = 52;
@@ -1204,7 +1128,7 @@ namespace QuanLyDangKiMonHoc
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label24.Location = new System.Drawing.Point(332, 254);
+            this.label24.Location = new System.Drawing.Point(334, 232);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(137, 23);
             this.label24.TabIndex = 50;
@@ -1213,7 +1137,7 @@ namespace QuanLyDangKiMonHoc
             // tbEndTime
             // 
             this.tbEndTime.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbEndTime.Location = new System.Drawing.Point(767, 345);
+            this.tbEndTime.Location = new System.Drawing.Point(804, 338);
             this.tbEndTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEndTime.Name = "tbEndTime";
             this.tbEndTime.Size = new System.Drawing.Size(139, 22);
@@ -1222,7 +1146,7 @@ namespace QuanLyDangKiMonHoc
             // tbEndWeek
             // 
             this.tbEndWeek.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbEndWeek.Location = new System.Drawing.Point(165, 343);
+            this.tbEndWeek.Location = new System.Drawing.Point(165, 340);
             this.tbEndWeek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEndWeek.Name = "tbEndWeek";
             this.tbEndWeek.Size = new System.Drawing.Size(140, 22);
@@ -1231,7 +1155,7 @@ namespace QuanLyDangKiMonHoc
             // tbStartWeek
             // 
             this.tbStartWeek.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbStartWeek.Location = new System.Drawing.Point(767, 308);
+            this.tbStartWeek.Location = new System.Drawing.Point(804, 287);
             this.tbStartWeek.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbStartWeek.Name = "tbStartWeek";
             this.tbStartWeek.Size = new System.Drawing.Size(139, 22);
@@ -1240,7 +1164,7 @@ namespace QuanLyDangKiMonHoc
             // tbClassName
             // 
             this.tbClassName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbClassName.Location = new System.Drawing.Point(165, 256);
+            this.tbClassName.Location = new System.Drawing.Point(165, 232);
             this.tbClassName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbClassName.Name = "tbClassName";
             this.tbClassName.Size = new System.Drawing.Size(140, 22);
@@ -1252,7 +1176,7 @@ namespace QuanLyDangKiMonHoc
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label18.Location = new System.Drawing.Point(653, 346);
+            this.label18.Location = new System.Drawing.Point(672, 337);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(106, 23);
             this.label18.TabIndex = 47;
@@ -1264,7 +1188,7 @@ namespace QuanLyDangKiMonHoc
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label19.Location = new System.Drawing.Point(36, 342);
+            this.label19.Location = new System.Drawing.Point(36, 340);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(119, 23);
             this.label19.TabIndex = 46;
@@ -1276,7 +1200,7 @@ namespace QuanLyDangKiMonHoc
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label20.Location = new System.Drawing.Point(41, 298);
+            this.label20.Location = new System.Drawing.Point(41, 280);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(114, 23);
             this.label20.TabIndex = 44;
@@ -1304,7 +1228,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvClass.Size = new System.Drawing.Size(904, 210);
+            this.dgvClass.Size = new System.Drawing.Size(964, 191);
             this.dgvClass.TabIndex = 43;
             this.dgvClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellContentClick);
             this.dgvClass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvClass_KeyDown);
@@ -1386,7 +1310,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateClass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateClass.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateClass.Location = new System.Drawing.Point(661, 380);
+            this.btnUpdateClass.Location = new System.Drawing.Point(727, 385);
             this.btnUpdateClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateClass.Name = "btnUpdateClass";
             this.btnUpdateClass.Size = new System.Drawing.Size(117, 39);
@@ -1402,7 +1326,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddClass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddClass.ForeColor = System.Drawing.Color.White;
-            this.btnAddClass.Location = new System.Drawing.Point(789, 380);
+            this.btnAddClass.Location = new System.Drawing.Point(850, 385);
             this.btnAddClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddClass.Name = "btnAddClass";
             this.btnAddClass.Size = new System.Drawing.Size(117, 39);
@@ -1411,29 +1335,13 @@ namespace QuanLyDangKiMonHoc
             this.btnAddClass.UseVisualStyleBackColor = false;
             this.btnAddClass.Click += new System.EventHandler(this.btnAddClass_Click);
             // 
-            // btnClearClass
-            // 
-            this.btnClearClass.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearClass.BackColor = System.Drawing.Color.Orange;
-            this.btnClearClass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearClass.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearClass.ForeColor = System.Drawing.Color.White;
-            this.btnClearClass.Location = new System.Drawing.Point(539, 380);
-            this.btnClearClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearClass.Name = "btnClearClass";
-            this.btnClearClass.Size = new System.Drawing.Size(117, 39);
-            this.btnClearClass.TabIndex = 40;
-            this.btnClearClass.Text = "Clear";
-            this.btnClearClass.UseVisualStyleBackColor = false;
-            this.btnClearClass.Click += new System.EventHandler(this.btnClearClass_Click);
-            // 
             // label21
             // 
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label21.Location = new System.Drawing.Point(637, 305);
+            this.label21.Location = new System.Drawing.Point(654, 287);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(125, 23);
             this.label21.TabIndex = 38;
@@ -1445,7 +1353,7 @@ namespace QuanLyDangKiMonHoc
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label22.Location = new System.Drawing.Point(639, 258);
+            this.label22.Location = new System.Drawing.Point(658, 239);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(120, 23);
             this.label22.TabIndex = 36;
@@ -1457,7 +1365,7 @@ namespace QuanLyDangKiMonHoc
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label23.Location = new System.Drawing.Point(15, 254);
+            this.label23.Location = new System.Drawing.Point(15, 229);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(140, 23);
             this.label23.TabIndex = 34;
@@ -1467,10 +1375,10 @@ namespace QuanLyDangKiMonHoc
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.panel5.Location = new System.Drawing.Point(0, 222);
+            this.panel5.Location = new System.Drawing.Point(3, 200);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(907, 11);
+            this.panel5.Size = new System.Drawing.Size(964, 11);
             this.panel5.TabIndex = 33;
             // 
             // tabPage5
@@ -1489,7 +1397,6 @@ namespace QuanLyDangKiMonHoc
             this.tabPage5.Controls.Add(this.label32);
             this.tabPage5.Controls.Add(this.dgvParticipant);
             this.tabPage5.Controls.Add(this.btnUpdateParticipant);
-            this.tabPage5.Controls.Add(this.btnClearParticipant);
             this.tabPage5.Controls.Add(this.label33);
             this.tabPage5.Controls.Add(this.label34);
             this.tabPage5.Controls.Add(this.label35);
@@ -1497,7 +1404,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage5.Location = new System.Drawing.Point(184, 4);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(972, 426);
+            this.tabPage5.Size = new System.Drawing.Size(973, 426);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "Participant";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1517,7 +1424,7 @@ namespace QuanLyDangKiMonHoc
             this.cbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cbGender.Location = new System.Drawing.Point(171, 369);
+            this.cbGender.Location = new System.Drawing.Point(169, 375);
             this.cbGender.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(139, 24);
@@ -1530,7 +1437,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddParticipant.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddParticipant.ForeColor = System.Drawing.Color.White;
-            this.btnAddParticipant.Location = new System.Drawing.Point(789, 383);
+            this.btnAddParticipant.Location = new System.Drawing.Point(850, 383);
             this.btnAddParticipant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddParticipant.Name = "btnAddParticipant";
             this.btnAddParticipant.Size = new System.Drawing.Size(117, 39);
@@ -1584,7 +1491,7 @@ namespace QuanLyDangKiMonHoc
             // tbUsername
             // 
             this.tbUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbUsername.Location = new System.Drawing.Point(171, 319);
+            this.tbUsername.Location = new System.Drawing.Point(169, 325);
             this.tbUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(140, 22);
@@ -1626,7 +1533,7 @@ namespace QuanLyDangKiMonHoc
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label32.Location = new System.Drawing.Point(37, 316);
+            this.label32.Location = new System.Drawing.Point(36, 325);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(120, 23);
             this.label32.TabIndex = 68;
@@ -1651,7 +1558,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvParticipant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvParticipant.Name = "dgvParticipant";
             this.dgvParticipant.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvParticipant.Size = new System.Drawing.Size(904, 210);
+            this.dgvParticipant.Size = new System.Drawing.Size(964, 210);
             this.dgvParticipant.TabIndex = 67;
             this.dgvParticipant.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParticipant_CellContentClick);
             this.dgvParticipant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvParticipant_KeyDown);
@@ -1712,7 +1619,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateParticipant.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateParticipant.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateParticipant.Location = new System.Drawing.Point(663, 383);
+            this.btnUpdateParticipant.Location = new System.Drawing.Point(727, 383);
             this.btnUpdateParticipant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateParticipant.Name = "btnUpdateParticipant";
             this.btnUpdateParticipant.Size = new System.Drawing.Size(117, 39);
@@ -1720,22 +1627,6 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParticipant.Text = "Update";
             this.btnUpdateParticipant.UseVisualStyleBackColor = false;
             this.btnUpdateParticipant.Click += new System.EventHandler(this.btnUpdateParticipant_Click);
-            // 
-            // btnClearParticipant
-            // 
-            this.btnClearParticipant.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearParticipant.BackColor = System.Drawing.Color.Orange;
-            this.btnClearParticipant.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearParticipant.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearParticipant.ForeColor = System.Drawing.Color.White;
-            this.btnClearParticipant.Location = new System.Drawing.Point(540, 383);
-            this.btnClearParticipant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearParticipant.Name = "btnClearParticipant";
-            this.btnClearParticipant.Size = new System.Drawing.Size(117, 39);
-            this.btnClearParticipant.TabIndex = 65;
-            this.btnClearParticipant.Text = "Clear";
-            this.btnClearParticipant.UseVisualStyleBackColor = false;
-            this.btnClearParticipant.Click += new System.EventHandler(this.btnClearParticipant_Click);
             // 
             // label33
             // 
@@ -1755,7 +1646,7 @@ namespace QuanLyDangKiMonHoc
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label34.Location = new System.Drawing.Point(63, 372);
+            this.label34.Location = new System.Drawing.Point(60, 376);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(96, 23);
             this.label34.TabIndex = 61;
@@ -1780,7 +1671,7 @@ namespace QuanLyDangKiMonHoc
             this.panel6.Location = new System.Drawing.Point(0, 222);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(907, 11);
+            this.panel6.Size = new System.Drawing.Size(967, 11);
             this.panel6.TabIndex = 58;
             // 
             // tabPage7
@@ -1788,7 +1679,6 @@ namespace QuanLyDangKiMonHoc
             this.tabPage7.Controls.Add(this.cbID);
             this.tabPage7.Controls.Add(this.btnAddParEmail);
             this.tabPage7.Controls.Add(this.btnUpdateParEmail);
-            this.tabPage7.Controls.Add(this.btnClearParEmail);
             this.tabPage7.Controls.Add(this.tbEmailParticipant);
             this.tabPage7.Controls.Add(this.label41);
             this.tabPage7.Controls.Add(this.label40);
@@ -1797,7 +1687,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage7.Location = new System.Drawing.Point(184, 4);
             this.tabPage7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(972, 426);
+            this.tabPage7.Size = new System.Drawing.Size(973, 426);
             this.tabPage7.TabIndex = 8;
             this.tabPage7.Text = "Participant Email";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1805,7 +1695,7 @@ namespace QuanLyDangKiMonHoc
             // cbID
             // 
             this.cbID.FormattingEnabled = true;
-            this.cbID.Location = new System.Drawing.Point(147, 311);
+            this.cbID.Location = new System.Drawing.Point(147, 309);
             this.cbID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbID.Name = "cbID";
             this.cbID.Size = new System.Drawing.Size(145, 24);
@@ -1818,7 +1708,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddParEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddParEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddParEmail.ForeColor = System.Drawing.Color.White;
-            this.btnAddParEmail.Location = new System.Drawing.Point(789, 383);
+            this.btnAddParEmail.Location = new System.Drawing.Point(850, 383);
             this.btnAddParEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddParEmail.Name = "btnAddParEmail";
             this.btnAddParEmail.Size = new System.Drawing.Size(117, 39);
@@ -1834,7 +1724,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateParEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateParEmail.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateParEmail.Location = new System.Drawing.Point(667, 383);
+            this.btnUpdateParEmail.Location = new System.Drawing.Point(727, 383);
             this.btnUpdateParEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateParEmail.Name = "btnUpdateParEmail";
             this.btnUpdateParEmail.Size = new System.Drawing.Size(117, 39);
@@ -1842,22 +1732,6 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParEmail.Text = "Update";
             this.btnUpdateParEmail.UseVisualStyleBackColor = false;
             this.btnUpdateParEmail.Click += new System.EventHandler(this.btnUpdateParEmail_Click);
-            // 
-            // btnClearParEmail
-            // 
-            this.btnClearParEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearParEmail.BackColor = System.Drawing.Color.Orange;
-            this.btnClearParEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearParEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearParEmail.ForeColor = System.Drawing.Color.White;
-            this.btnClearParEmail.Location = new System.Drawing.Point(544, 383);
-            this.btnClearParEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearParEmail.Name = "btnClearParEmail";
-            this.btnClearParEmail.Size = new System.Drawing.Size(117, 39);
-            this.btnClearParEmail.TabIndex = 79;
-            this.btnClearParEmail.Text = "Clear";
-            this.btnClearParEmail.UseVisualStyleBackColor = false;
-            this.btnClearParEmail.Click += new System.EventHandler(this.btnClearParEmail_Click);
             // 
             // tbEmailParticipant
             // 
@@ -1874,7 +1748,7 @@ namespace QuanLyDangKiMonHoc
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label41.Location = new System.Drawing.Point(451, 311);
+            this.label41.Location = new System.Drawing.Point(459, 311);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(74, 23);
             this.label41.TabIndex = 72;
@@ -1899,7 +1773,7 @@ namespace QuanLyDangKiMonHoc
             this.panel7.Location = new System.Drawing.Point(0, 222);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(907, 11);
+            this.panel7.Size = new System.Drawing.Size(908, 11);
             this.panel7.TabIndex = 69;
             // 
             // dgvParEmail
@@ -1916,7 +1790,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvParEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvParEmail.Name = "dgvParEmail";
             this.dgvParEmail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvParEmail.Size = new System.Drawing.Size(907, 210);
+            this.dgvParEmail.Size = new System.Drawing.Size(908, 210);
             this.dgvParEmail.TabIndex = 68;
             this.dgvParEmail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParEmail_CellContentClick);
             this.dgvParEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvParEmail_KeyDown);
@@ -1949,14 +1823,13 @@ namespace QuanLyDangKiMonHoc
             this.tabPage9.Controls.Add(this.label36);
             this.tabPage9.Controls.Add(this.label37);
             this.tabPage9.Controls.Add(this.btnUpdateParPhone);
-            this.tabPage9.Controls.Add(this.btnClearParPhone);
             this.tabPage9.Controls.Add(this.label38);
             this.tabPage9.Controls.Add(this.label39);
             this.tabPage9.Controls.Add(this.label27);
             this.tabPage9.Location = new System.Drawing.Point(184, 4);
             this.tabPage9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(972, 426);
+            this.tabPage9.Size = new System.Drawing.Size(973, 426);
             this.tabPage9.TabIndex = 10;
             this.tabPage9.Text = "Participant Number";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1964,7 +1837,7 @@ namespace QuanLyDangKiMonHoc
             // cbID1
             // 
             this.cbID1.FormattingEnabled = true;
-            this.cbID1.Location = new System.Drawing.Point(181, 318);
+            this.cbID1.Location = new System.Drawing.Point(192, 313);
             this.cbID1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbID1.Name = "cbID1";
             this.cbID1.Size = new System.Drawing.Size(149, 24);
@@ -1976,7 +1849,7 @@ namespace QuanLyDangKiMonHoc
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label43.Location = new System.Drawing.Point(436, 315);
+            this.label43.Location = new System.Drawing.Point(444, 315);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(167, 23);
             this.label43.TabIndex = 82;
@@ -1988,7 +1861,7 @@ namespace QuanLyDangKiMonHoc
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label42.Location = new System.Drawing.Point(133, 318);
+            this.label42.Location = new System.Drawing.Point(135, 313);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(42, 23);
             this.label42.TabIndex = 81;
@@ -2001,7 +1874,7 @@ namespace QuanLyDangKiMonHoc
             this.panel8.Location = new System.Drawing.Point(0, 220);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(907, 11);
+            this.panel8.Size = new System.Drawing.Size(908, 11);
             this.panel8.TabIndex = 80;
             // 
             // dgvParPhone
@@ -2018,7 +1891,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvParPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvParPhone.Name = "dgvParPhone";
             this.dgvParPhone.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvParPhone.Size = new System.Drawing.Size(907, 210);
+            this.dgvParPhone.Size = new System.Drawing.Size(908, 210);
             this.dgvParPhone.TabIndex = 79;
             this.dgvParPhone.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParPhone_CellContentClick);
             this.dgvParPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvParPhone_KeyDown);
@@ -2044,7 +1917,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddParPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddParPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddParPhone.ForeColor = System.Drawing.Color.White;
-            this.btnAddParPhone.Location = new System.Drawing.Point(789, 383);
+            this.btnAddParPhone.Location = new System.Drawing.Point(850, 383);
             this.btnAddParPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddParPhone.Name = "btnAddParPhone";
             this.btnAddParPhone.Size = new System.Drawing.Size(117, 39);
@@ -2056,7 +1929,7 @@ namespace QuanLyDangKiMonHoc
             // tbPhonePar
             // 
             this.tbPhonePar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbPhonePar.Location = new System.Drawing.Point(617, 315);
+            this.tbPhonePar.Location = new System.Drawing.Point(617, 314);
             this.tbPhonePar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPhonePar.Name = "tbPhonePar";
             this.tbPhonePar.Size = new System.Drawing.Size(140, 22);
@@ -2113,7 +1986,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateParPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateParPhone.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateParPhone.Location = new System.Drawing.Point(667, 383);
+            this.btnUpdateParPhone.Location = new System.Drawing.Point(727, 383);
             this.btnUpdateParPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateParPhone.Name = "btnUpdateParPhone";
             this.btnUpdateParPhone.Size = new System.Drawing.Size(117, 39);
@@ -2121,22 +1994,6 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParPhone.Text = "Update";
             this.btnUpdateParPhone.UseVisualStyleBackColor = false;
             this.btnUpdateParPhone.Click += new System.EventHandler(this.btnUpdateParPhone_Click);
-            // 
-            // btnClearParPhone
-            // 
-            this.btnClearParPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClearParPhone.BackColor = System.Drawing.Color.Orange;
-            this.btnClearParPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClearParPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearParPhone.ForeColor = System.Drawing.Color.White;
-            this.btnClearParPhone.Location = new System.Drawing.Point(544, 383);
-            this.btnClearParPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearParPhone.Name = "btnClearParPhone";
-            this.btnClearParPhone.Size = new System.Drawing.Size(117, 39);
-            this.btnClearParPhone.TabIndex = 65;
-            this.btnClearParPhone.Text = "Clear";
-            this.btnClearParPhone.UseVisualStyleBackColor = false;
-            this.btnClearParPhone.Click += new System.EventHandler(this.btnClearParPhone_Click);
             // 
             // label38
             // 
@@ -2171,11 +2028,27 @@ namespace QuanLyDangKiMonHoc
             this.label27.Size = new System.Drawing.Size(0, 23);
             this.label27.TabIndex = 59;
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.BackColor = System.Drawing.Color.Red;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Location = new System.Drawing.Point(1071, 12);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(106, 35);
+            this.btnLogout.TabIndex = 43;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 495);
+            this.ClientSize = new System.Drawing.Size(1215, 495);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.guna2TabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Admin";
@@ -2220,7 +2093,6 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btnUpdateStudent;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.Button btnClearStudent;
         private System.Windows.Forms.TextBox tbStudyStatus;
         private System.Windows.Forms.TextBox tbCredits;
         private System.Windows.Forms.Label label2;
@@ -2234,7 +2106,6 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Button btnUpdateTeacher;
         private System.Windows.Forms.Button btnAddTeacher;
-        private System.Windows.Forms.Button btnClearTeacher;
         private System.Windows.Forms.TextBox tbDegree;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -2258,7 +2129,6 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Button btnUpdateCourse;
         private System.Windows.Forms.Button btnAddCourse;
-        private System.Windows.Forms.Button btnClearCourse;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -2277,7 +2147,6 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.Button btnUpdateDepartment;
         private System.Windows.Forms.Button btnAddDepart;
-        private System.Windows.Forms.Button btnClearDepartment;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel4;
@@ -2312,7 +2181,6 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.Button btnUpdateClass;
         private System.Windows.Forms.Button btnAddClass;
-        private System.Windows.Forms.Button btnClearClass;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
@@ -2339,7 +2207,6 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.Button btnUpdateParticipant;
-        private System.Windows.Forms.Button btnClearParticipant;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
@@ -2348,7 +2215,6 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.ComboBox cbID;
         private System.Windows.Forms.Button btnAddParEmail;
         private System.Windows.Forms.Button btnUpdateParEmail;
-        private System.Windows.Forms.Button btnClearParEmail;
         private System.Windows.Forms.TextBox tbEmailParticipant;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
@@ -2371,10 +2237,10 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Button btnUpdateParPhone;
-        private System.Windows.Forms.Button btnClearParPhone;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label27;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
+        private System.Windows.Forms.Button btnLogout;
     }
 }

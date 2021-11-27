@@ -71,7 +71,7 @@ namespace QuanLyDangKiMonHoc
 
             try
             {
-                ClassForm classForm = new ClassForm(idStudent,this, false);
+                ClassForm classForm = new ClassForm(idStudent,this, false, " ");
                 //classForm.Show();
 
                 formBackground.FormBorderStyle = FormBorderStyle.None;
@@ -176,7 +176,7 @@ namespace QuanLyDangKiMonHoc
 
                     try
                     {
-                        ClassForm classForm = new ClassForm(idStudent, this, true);
+                        ClassForm classForm = new ClassForm(idStudent, this, true, dataGridViewRegistered.CurrentRow.Cells[1].Value.ToString());
                         formBackground.FormBorderStyle = FormBorderStyle.None;
                         formBackground.Opacity = .50d;
                         formBackground.BackColor = Color.Black;

@@ -567,12 +567,14 @@ where Study.ClassName = @selectClassName and Study.StudentID = @SelectStudentId
 GO
 
 --7. Hệ thống cho phép sinh viên đổi lớp học của môn học đã đăng ký (nếu môn học có nhiều hơn 1 lớp). (đến từ sinh viên) 
-CREATE PROCEDURE ChangeClassName @StudentId varchar(11), @ClassNameAfter varchar(10)
+CREATE PROCEDURE ChangeClassName @StudentId varchar(11), @ClassNameBefore varchar(10), @ClassNameAfter varchar(10)
 AS
 update Study		
 set ClassName = @ClassNameAfter
-where study.StudentID = @StudentId
+where Study.ClassName = @ClassNameBefore AND Study.StudentID = @StudentId
 GO
+
+drop proc ChangeClassName
 
 --Hủy bỏ môn học khi sĩ số ít hơn hoặc bằng một nửa số lượng tối đa mà lớp học có thể chứa sau khi kết thúc thời gian đăng ký
 
@@ -581,7 +583,7 @@ AS
     DECLARE @NumberStudentInClass table(
         ClassName VARCHAR(10) not null,
         NumberStudent INT
-    )   
+    ) 
 
     insert into @NumberStudentInClass
     select ClassName, COUNT(StudentID) as NumberStudent
@@ -594,8 +596,8 @@ AS
                             from @NumberStudentInClass A
                             WHERE A.NumberStudent <= ((select B.MaximumStudents from Class B WHERE B.ClassName = A.ClassName)/2)
     )
-
 GO
+
 --- hàm kiểm tra xem thử 2 lớp có trùng lịch hay không?
 create FUNCTION FalseDayTimeStudy(
 	@SelectClassName1 varchar(10)
@@ -726,6 +728,119 @@ BEGIN
         GROUP BY Study.StudentID)>24
     BEGIN
         print N'Mỗi sinh viên chỉ đăng ký tối đa 24 tín chỉ'
+        ROLLBACK TRAN
+    END
+
+	IF (
+        SELECT COUNT(*)
+        FROM Study
+        WHERE ClassName = (SELECT ClassName FROM inserted)
+    ) > (
+        SELECT MaximumStudents
+        FROM Class
+        WHERE ClassName = (SELECT ClassName FROM inserted)
+    )
+    BEGIN
+        print N'Đã đăng ký quá số lượng sinh tối đa!!'
+        ROLLBACK TRAN
+    END
+END
+
+
+--- Cài đặt trigger cho Study gồm các trigger con sau đây.
+--- Hệ thống không cho phép đăng ký 2 môn học trùng lịch học
+-- Sinh viên chỉ được đăng ký tối đa 24 tín chỉ trong 1 kỳ --
+-- Sinh viên không được đăng ký nhiều lớp học trong cùng môn học.
+-- Sinh viên chỉ được đăng ký tối đa 24 tín chỉ trong 1 kỳ --
+--- Khi đăng ký quá số lượng sinh viên tối đa của mỗi lớp thì báo lỗi
+CREATE TRIGGER CheckCreditsForEachStudent
+ON Study
+FOR INSERT, UPDATE
+AS
+BEGIN
+    --- Hệ thống không cho phép đăng ký 2 môn học trùng lịch học
+
+    -- Tạo bảng copy của inserted thêm trường identity rồi ghép lại với Study 
+    -- để lấy ra từng cặp tên lớp học có môn lớp giống với tên môn học của 
+    --  inserted classname để so sánh xem thử có bị trùng lịch học hay không
+    DECLARE @copyStudyinserted table(
+        id Int IDENTITY,
+        StudentId varchar(11),
+        ClassName varchar(10)
+    )
+    DECLARE @ClassTableToCheck table(
+        id Int IDENTITY,
+        Class1 varchar(10),
+        Class2 varchar(10)
+
+    )
+    insert into @copyStudyinserted
+    select *
+    from inserted
+
+    insert into @ClassTableToCheck(Class1, Class2) 
+    SELECT Study.ClassName as Class1, C.ClassName as Class2
+    from Study, @copyStudyinserted C
+    WHERE Study.StudentID = C.StudentId AND Study.ClassName != C.ClassName
+
+
+    --- Lấy ra từng cặp tên lớp học
+    DECLARE
+    @counter INT = 1,
+    @max INT = 0,
+    @class1 varchar(10),
+    @class2 varchar(10)
+
+    -- loop qua các cặp
+    SELECT @max = COUNT(id) FROM @ClassTableToCheck
+    WHILE @counter <= @max
+    BEGIN
+        SET @class1 = (SELECT Class1 FROM @ClassTableToCheck C WHERE C.id = @counter)
+        SET @class2 = (SELECT Class2 FROM @ClassTableToCheck C WHERE C.id = @counter)
+        if dbo.FalseDayTimeStudy(@class1, @class2) = 1
+        BEGIN
+            print N'Có 2 lớp bị đụng lịch rồi!!!!'
+            ROLLBACK TRAN
+        END
+        SET @counter = @counter + 1
+    END
+
+    -- Sinh viên không được đăng ký nhiều lớp học trong cùng môn học.
+    IF (
+        SELECT COUNT(Study.ClassName)
+        FROM Study, Class
+        WHERE Study.ClassName = Class.ClassName 
+                AND Class.SubjectID = (SELECT SubjectID FROM inserted A, Class B WHERE A.ClassName = B.ClassName)
+                AND Study.StudentID = (SELECT StudentID FROM inserted)
+        GROUP BY StudentID, SubjectID
+    )>1
+    BEGIN
+        print N'Môi sinh viên chỉ đăng ký được một lớp học ở mỗi môn học'
+        ROLLBACK TRAN
+    END
+    -- Sinh viên chỉ được đăng ký tối đa 24 tín chỉ trong 1 kỳ --
+    IF (
+        SELECT SUM(Subject.Credits) as NumberCredits
+        FROM Study, Class, Subject
+        WHERE Study.ClassName = Class.ClassName AND Class.SubjectID = Subject.SubjectID AND  StudentID = (SELECT StudentID FROM inserted)
+        GROUP BY Study.StudentID)>24
+    BEGIN
+        print N'Mỗi sinh viên chỉ đăng ký tối đa 24 tín chỉ'
+        ROLLBACK TRAN
+    END
+
+    --- Khi đăng ký quá số lượng sinh viên tối đa của mỗi lớp thì báo lỗi
+    IF (
+        SELECT COUNT(*)
+        FROM Study
+        WHERE ClassName = (SELECT ClassName FROM inserted)
+    ) > (
+        SELECT MaximumStudents
+        FROM Class
+        WHERE ClassName = (SELECT ClassName FROM inserted)
+    )
+    BEGIN
+        print N'Đã đăng ký quá số lượng sinh tối đa!!'
         ROLLBACK TRAN
     END
 END

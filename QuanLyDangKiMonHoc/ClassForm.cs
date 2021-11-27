@@ -13,17 +13,20 @@ namespace QuanLyDangKiMonHoc
 {
     public partial class ClassForm : Form
     {
-        public ClassForm(string idStudent,HomePage homePage, bool isChange)
+        public ClassForm(string idStudent,HomePage homePage, bool isChange, string beforeClass)
         {
             HomePage = homePage;
             this.idStudent = idStudent;
             this.isChange = isChange;
+            this.beforeClass = beforeClass;
             InitializeComponent();
         }
 
         private string idStudent;
         private HomePage HomePage;
         private bool isChange;
+        private string beforeClass;
+
         private void dataGridViewClass_Click(object sender, EventArgs e)
         {
             txtClass.Text = dataGridViewClass.CurrentRow.Cells[0].Value.ToString();
@@ -115,6 +118,7 @@ namespace QuanLyDangKiMonHoc
                         var command = new SqlCommand("ChangeClassName", connection);
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@StudentId", idStudent);
+                        command.Parameters.AddWithValue("@ClassNameBefore", beforeClass);
                         command.Parameters.AddWithValue("@ClassNameAfter", dataGridViewClass.CurrentRow.Cells[0].Value.ToString());
                         try
                         {

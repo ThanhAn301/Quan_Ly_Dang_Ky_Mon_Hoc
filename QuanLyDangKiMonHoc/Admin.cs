@@ -74,13 +74,6 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
-        private void btnClearDepartment_Click(object sender, EventArgs e)
-        {
-            tbDepartment.Clear();
-            tbEmail.Clear();
-            tbPhone.Clear();
-            tbFax.Clear();
-        }
 
         private void dgvDepartment_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -291,10 +284,6 @@ namespace QuanLyDangKiMonHoc
             tbAddress.Clear();
             cbDepartment.SelectedIndex = -1;
         }
-        private void btnClearParticipant_Click(object sender, EventArgs e)
-        {
-            ClearText();
-        }
 
         private void dgvParticipant_KeyDown(object sender, KeyEventArgs e)
         {
@@ -436,12 +425,6 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
-        private void btnClearStudent_Click(object sender, EventArgs e)
-        {
-            cbStudentID.SelectedIndex = -1;
-            tbStudyStatus.Clear();
-            tbCredits.Clear();
-        }
 
         private void dgvStudent_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -588,11 +571,6 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
-        private void btnClearParEmail_Click(object sender, EventArgs e)
-        {
-            cbID.SelectedIndex = -1;
-            tbEmailParticipant.Clear();
-        }
 
         private void dgvParEmail_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -723,11 +701,6 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
-        private void btnClearParPhone_Click(object sender, EventArgs e)
-        {
-            cbID1.SelectedIndex = -1;
-            tbPhonePar.Clear();
-        }
 
         private void dgvParPhone_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -814,7 +787,34 @@ namespace QuanLyDangKiMonHoc
 
         private void btnAddTeacher_Click(object sender, EventArgs e)
         {
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+            {
+                connection.Open();
+                string query = "insert into Teacher(TeacherID,Degree) values(@TeacherID,@Degree)";
 
+                SqlCommand command = new SqlCommand(query, connection);
+
+                command.Parameters.AddWithValue("@TeacherID", cbTeacherID.Text.ToString());
+                command.Parameters.AddWithValue("@Degree", tbDegree.Text);
+
+                try
+                {
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Add successfully");
+                    cbTeacherID.SelectedIndex = -1;
+                    tbDegree.Clear();
+                    LoadTeachers();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    connection.Close();
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
         }
 
         private void btnUpdateTeacher_Click(object sender, EventArgs e)
@@ -850,11 +850,6 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
-        private void btnClearTeacher_Click(object sender, EventArgs e)
-        {
-            cbTeacherID.SelectedIndex = -1;
-            tbDegree.Clear();
-        }
 
         private void dgvTeacher_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1061,15 +1056,6 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
-        private void btnClearCourse_Click(object sender, EventArgs e)
-        {
-            tbSubjectName.Clear();
-            tbSubject.Clear();
-            tbSemester.Clear();
-            tbCreditCourse.Clear();
-            cbDepartmentCourse.SelectedIndex = -1;
-            tbIDPre.Clear();
-        }
 
 
         #endregion
@@ -1215,19 +1201,6 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
-        private void btnClearClass_Click(object sender, EventArgs e)
-        {
-            tbClassName.Clear();
-            tbClassRoom.Clear();
-            cbTeacherClass.SelectedIndex = -1;
-            cbSubject.SelectedIndex = -1;
-            tbDay.Clear();
-            tbStartWeek.Clear();
-            tbEndWeek.Clear();
-            tbStartTime.Clear();
-            tbEndTime.Clear();
-            tbMaximumStudent.Clear();
-        }
 
         private void dgvClass_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1330,6 +1303,13 @@ namespace QuanLyDangKiMonHoc
                 GetIDTeacher1();
                 LoadClass();
             }
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Login f = new Login();
+            f.Show();
+            this.Hide();
         }
     }
 }
