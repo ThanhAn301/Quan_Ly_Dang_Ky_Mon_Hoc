@@ -51,7 +51,7 @@ namespace QuanLyDangKiMonHoc
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(199, 206);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(200, 22);
             this.txtUsername.TabIndex = 1;
@@ -59,7 +59,7 @@ namespace QuanLyDangKiMonHoc
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(199, 293);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(201, 28);
             this.btnLogin.TabIndex = 2;
@@ -83,10 +83,12 @@ namespace QuanLyDangKiMonHoc
             // 
             this.txtPassWord.AcceptsReturn = true;
             this.txtPassWord.Location = new System.Drawing.Point(199, 247);
-            this.txtPassWord.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassWord.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtPassWord.Size = new System.Drawing.Size(200, 22);
             this.txtPassWord.TabIndex = 4;
+            this.txtPassWord.UseSystemPasswordChar = true;
             // 
             // Login
             // 
@@ -99,7 +101,7 @@ namespace QuanLyDangKiMonHoc
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

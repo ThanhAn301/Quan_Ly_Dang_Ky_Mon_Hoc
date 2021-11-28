@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace QuanLyDangKiMonHoc
-{
+{   
     public partial class ClassForm : Form
     {
         public ClassForm(string idStudent,HomePage homePage, bool isChange, string beforeClass)
@@ -141,7 +141,7 @@ namespace QuanLyDangKiMonHoc
 
         private void txtEnd_TextChanged(object sender, EventArgs e)
         {
-
+ 
         }
 
     }

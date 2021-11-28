@@ -45,8 +45,8 @@ namespace QuanLyDangKiMonHoc
         {
             using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
             {
-                string query = "select ClassRoom,C.ClassName,S.SubjectID,S.SubjectName,S.Credits,TeacherID,DayInWeek from Subject as S,Class as C,Study " +
-                    "where C.SubjectID = S.SubjectID and Study.ClassName = C.ClassName and Study.StudentID = '" + idStudent + "'";
+                string query = "select ClassRoom,C.ClassName,S.SubjectID,S.SubjectName,S.Credits,ParticipantName AS TeacherName ,DayInWeek,StartWeek,EndWeek,StartTimeInDay,EndTimeInDay from Subject as S,Class as C,Study, Participant " +
+                    "where C.SubjectID = S.SubjectID and Study.ClassName = C.ClassName and TeacherId = ID and Study.StudentID = '" + idStudent + "'";
 
                 dataGridViewRegistered.Rows.Clear();
                 connection.Open();
@@ -54,7 +54,7 @@ namespace QuanLyDangKiMonHoc
                 SqlDataReader dr = command.ExecuteReader();
                 while (dr.Read())
                 {
-                    dataGridViewRegistered.Rows.Add(dr["ClassRoom"], dr["ClassName"],dr["SubjectID"], dr["SubjectName"], dr["Credits"], dr["TeacherID"], dr["DayInWeek"]);
+                    dataGridViewRegistered.Rows.Add(dr["ClassRoom"], dr["ClassName"],dr["SubjectID"], dr["SubjectName"], dr["Credits"], dr["TeacherName"], dr["DayInWeek"], dr["StartWeek"], dr["EndWeek"], dr["StartTimeInDay"], dr["EndTimeInDay"]);
                 }
                 dr.Close();
                 connection.Close();
@@ -268,8 +268,8 @@ namespace QuanLyDangKiMonHoc
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Login f = new Login();
-            f.Show();
             this.Hide();
+            f.Show();
         }
 
         private void dataGridViewRegistered_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

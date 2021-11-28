@@ -250,7 +250,7 @@ namespace QuanLyDangKiMonHoc
             // 
             // txtRoom
             // 
-            this.txtRoom.Location = new System.Drawing.Point(123, 386);
+            this.txtRoom.Location = new System.Drawing.Point(123, 389);
             this.txtRoom.Margin = new System.Windows.Forms.Padding(4);
             this.txtRoom.Name = "txtRoom";
             this.txtRoom.Size = new System.Drawing.Size(161, 22);
@@ -266,7 +266,7 @@ namespace QuanLyDangKiMonHoc
             // 
             // txtCourse
             // 
-            this.txtCourse.Location = new System.Drawing.Point(428, 386);
+            this.txtCourse.Location = new System.Drawing.Point(428, 390);
             this.txtCourse.Margin = new System.Windows.Forms.Padding(4);
             this.txtCourse.Name = "txtCourse";
             this.txtCourse.Size = new System.Drawing.Size(165, 22);
@@ -285,7 +285,7 @@ namespace QuanLyDangKiMonHoc
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(308, 389);
+            this.label5.Location = new System.Drawing.Point(308, 390);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 21);

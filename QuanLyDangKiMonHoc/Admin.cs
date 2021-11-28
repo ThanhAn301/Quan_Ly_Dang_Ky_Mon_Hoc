@@ -12,6 +12,7 @@ using System.Windows.Forms;
 
 namespace QuanLyDangKiMonHoc
 {
+    
     public partial class Admin : Form
     {
         public Admin()
@@ -20,6 +21,8 @@ namespace QuanLyDangKiMonHoc
             GetIDStudent();
             LoadStudents();
         }
+        public static Guna.UI2.WinForms.Guna2DateTimePicker date1;
+        public static Guna.UI2.WinForms.Guna2DateTimePicker date2;
 
         #region Xử lí Department
         private void LoadDepartments()
@@ -1262,7 +1265,7 @@ namespace QuanLyDangKiMonHoc
         private void guna2TabControl1_Click_1(object sender, EventArgs e)
         {
             string text = guna2TabControl1.SelectedTab.Text;
-
+            
             if (text == "Student")
             {
                 GetIDStudent();
@@ -1305,11 +1308,21 @@ namespace QuanLyDangKiMonHoc
             }
         }
 
+        private void tbEndTime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Login f = new Login();
-            f.Show();
             this.Hide();
+            f.Show();
+        }
+
+        private void tbNameParticipant_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
