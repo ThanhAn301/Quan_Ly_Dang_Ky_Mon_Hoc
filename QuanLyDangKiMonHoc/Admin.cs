@@ -1315,12 +1315,25 @@ namespace QuanLyDangKiMonHoc
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Login f = new Login();
-            this.Hide();
-            f.Show();
+            this.Close();
         }
 
         private void tbNameParticipant_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbTeacherID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

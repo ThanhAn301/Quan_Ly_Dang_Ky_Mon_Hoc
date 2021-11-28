@@ -37,8 +37,9 @@ namespace QuanLyDangKiMonHoc
                 if (txtUsername.Text == "admin" && txtPassWord.Text == "admin123")
                 {
                     Admin adminForm = new Admin();
-                    adminForm.Show();
                     this.Hide();
+                    adminForm.ShowDialog();
+                    this.Show();
                 }
                 else {
                     using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))

@@ -363,6 +363,7 @@ values
 
 GO
 
+
 INSERT INTO Participant
 (ID, ParticipantName, Gender, Username, Password_Participant, Adress, DepartmentName)
 VALUES
@@ -453,36 +454,36 @@ VALUES
 ('1912887', 75, 'Second Year'),
 ('1912999', 60, 'First Year'),
 ('1913012', 80, 'Second Year');
-
 GO
 
 insert into Subject(SubjectName,SubjectID,Credits,Semester,DepartmentName,PreviousSubjectID)
 values
-('May hoc nang cao','CS013',4,1,'KHMT',null),
-('May hoc trong xu ly ngon ngu tu nhien','CS014',4,1,'KHMT',null),
-('Nhap mon lap trinh','IT001',4,1,'KHMT',null),
-('Do hoa may tinh','CS105',3,1,'KHMT','IT001'),
-('Kien truc may tinh','IT006',4,1,'KHMT',null),
-('Vi xu li dieu khien','CE103',4,1,'KHMT','IT006'),
-('Lap trinh truc quan','IT008',4,1,'XD','IT001'),
-('Lap trinh huong doi tuong','IT002',4,1,'XD',null),
-('Nhap mon cong nghe phan mem','SE104',4,1,'XD','IT002'),
-('Dac ta hinh thuc','SE106',4,1,'XD',null)
+('Giai tich 1','MT1003',4,1,'KHMT',null),
+('Vat ly 1','PH1003',4,1,'KHMT',null),
+('Nhap mon dien toan','CO1005',4,1,'KHMT',null),
+('He thong so','CO1023',3,1,'KHMT','CO1005'),
+('Giai tich 2','MT1005',4,1,'KHMT','MT1003'),
+('Ky thuat lap trinh','CO1027',4,1,'KHMT',null),
+('Kien truc may tinh','CO2007',4,1,'XD','CO1023'),
+('Cau truc du lieu va giai thuat','CO2003',4,1,'XD',null)
 
 GO
 
 insert into Class(ClassName,ClassRoom,TeacherID,SubjectID,DayInWeek,StartWeek,EndWeek,StartTimeInDay,EndTimeInDay,MaximumStudents)
 values
-('L01a','101','230095','CE103','2',3,9,'7:00','10:00',5),
-('L02b','201','232144','CE103','3',3,9,'14:00','16:00',5),
-('L03c','301','265907','CE103','2',3,9,'12:00','15:00',5),
-('L01b','402','292103','CS013','4',2,8,'14:00','17:00',5),
-('L02a','504','299778','CS013','2',2,8,'9:00','12:00',5),
-('L03d','204','300405','CS013','4',2,8,'8:00','10:00',5),
-('L01q','102','300877','CS014','5',3,7,'15:00','17:00',5),
-('L02e','402','301122','CS014','6',3,7,'16:00','18:00',5),
-('L03r','304','302045','CS014','5',3,7,'9:00','11:00',5)
-
+('L01-GT1','101','230095','MT1003','2',3,9,'7:00','10:00',3),
+('L02-GT1','201','232144','MT1003','3',3,9,'14:00','16:00',5),
+('L03-GT1','301','265907','MT1003','2',3,9,'12:00','15:00',4),
+('L01-VL1','402','292103','PH1003','3',2,8,'7:00','9:00',2),
+('L02-VL1','504','299778','PH1003','2',2,8,'9:00','12:00',5),
+('L01-GT2','204','300405','MT1005','4',2,8,'8:00','10:00',1),
+('L01-NMDT','102','300877','CO1005','5',3,7,'15:00','17:00',1),
+('L01-HTS','402','301122','CO1023','6',3,7,'16:00','18:00',2),
+('L01-KTLT','304','302045','CO1027','4',3,7,'9:00','11:00',5),
+('L02-KTLT','304','302045','CO1027','5',3,7,'9:00','11:00',5),
+('L01-KTMT','304','302045','CO2007','2',3,7,'9:00','11:00',5),
+('L01-CTDL','304','302045','CO2003','6',3,7,'7:00','9:00',5),
+('L02-CTDL','304','302045','CO2003','5',3,7,'12:00','14:00',5)
 GO
 
 SELECT *
@@ -639,112 +640,6 @@ BEGIN
 END;
 
 GO
-
-
---- Hệ thống không cho phép đăng ký 2 môn học trùng lịch học
-CREATE TRIGGER check_overlap_Study
-ON Study
-FOR INSERT, UPDATE
-AS
-BEGIN
-    -- Tạo bảng copy của inserted thêm trường identity rồi ghép lại với Study 
-    -- để lấy ra từng cặp tên lớp học có môn lớp giống với tên môn học của 
-    --  inserted classname để so sánh xem thử có bị trùng lịch học hay không
-    DECLARE @copyStudyinserted table(
-        id Int IDENTITY,
-        StudentId varchar(11),
-        ClassName varchar(10)
-    )
-    DECLARE @ClassTableToCheck table(
-        id Int IDENTITY,
-        Class1 varchar(10),
-        Class2 varchar(10)
-
-    )
-    insert into @copyStudyinserted
-    select *
-    from inserted
-
-    insert into @ClassTableToCheck(Class1, Class2) 
-    SELECT Study.ClassName as Class1, C.ClassName as Class2
-    from Study, @copyStudyinserted C
-    WHERE Study.StudentID = C.StudentId AND Study.ClassName != C.ClassName
-
-
-    --- Lấy ra từng cặp tên lớp học
-    DECLARE
-    @counter INT = 1,
-    @max INT = 0,
-    @class1 varchar(10),
-    @class2 varchar(10)
-
-    -- loop qua các cặp
-    SELECT @max = COUNT(id) FROM @ClassTableToCheck
-    WHILE @counter <= @max
-    BEGIN
-        SET @class1 = (SELECT Class1 FROM @ClassTableToCheck C WHERE C.id = @counter)
-        SET @class2 = (SELECT Class2 FROM @ClassTableToCheck C WHERE C.id = @counter)
-        if dbo.FalseDayTimeStudy(@class1, @class2) = 1
-        BEGIN
-            print N'Có 2 lớp bị đụng lịch rồi!!!!'
-            ROLLBACK TRAN
-        END
-        SET @counter = @counter + 1
-    END
-
-END
-GO
--- Sinh viên không được đăng ký nhiều lớp học trong cùng môn học.
-CREATE TRIGGER CheckStudy
-ON Study
-FOR insert, update
-AS
-BEGIN
-    IF (
-        SELECT COUNT(Study.ClassName)
-        FROM Study, Class
-        WHERE Study.ClassName = Class.ClassName 
-                AND Class.SubjectID = (SELECT SubjectID FROM inserted A, Class B WHERE A.ClassName = B.ClassName)
-                AND Study.StudentID = (SELECT StudentID FROM inserted)
-        GROUP BY StudentID, SubjectID
-    )>1
-    BEGIN
-        print N'Môi sinh viên chỉ đăng ký được một lớp học ở mỗi môn học'
-        ROLLBACK TRAN
-    END
-END
-
-GO
--- Sinh viên chỉ được đăng ký tối đa 24 tín chỉ trong 1 kỳ --
-CREATE TRIGGER CheckCreditsForEachStudent
-ON Study
-FOR INSERT, UPDATE
-AS
-BEGIN
-    IF (
-        SELECT SUM(Subject.Credits) as NumberCredits
-        FROM Study, Class, Subject
-        WHERE Study.ClassName = Class.ClassName AND Class.SubjectID = Subject.SubjectID AND  StudentID = (SELECT StudentID FROM inserted)
-        GROUP BY Study.StudentID)>24
-    BEGIN
-        print N'Mỗi sinh viên chỉ đăng ký tối đa 24 tín chỉ'
-        ROLLBACK TRAN
-    END
-
-	IF (
-        SELECT COUNT(*)
-        FROM Study
-        WHERE ClassName = (SELECT ClassName FROM inserted)
-    ) > (
-        SELECT MaximumStudents
-        FROM Class
-        WHERE ClassName = (SELECT ClassName FROM inserted)
-    )
-    BEGIN
-        print N'Đã đăng ký quá số lượng sinh tối đa!!'
-        ROLLBACK TRAN
-    END
-END
 
 
 --- Cài đặt trigger cho Study gồm các trigger con sau đây.

@@ -119,7 +119,7 @@ namespace QuanLyDangKiMonHoc
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dataGridViewClass.Location = new System.Drawing.Point(16, 58);
+            this.dataGridViewClass.Location = new System.Drawing.Point(13, 58);
             this.dataGridViewClass.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridViewClass.Name = "dataGridViewClass";
             this.dataGridViewClass.RowHeadersVisible = false;
