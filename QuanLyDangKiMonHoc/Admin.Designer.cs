@@ -30,6 +30,9 @@ namespace QuanLyDangKiMonHoc
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -198,8 +201,16 @@ namespace QuanLyDangKiMonHoc
             this.label45 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.dataGridViewStudy = new System.Windows.Forms.DataGridView();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectClass = new System.Windows.Forms.ComboBox();
+            this.selectSubject = new System.Windows.Forms.ComboBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.btnLogout = new System.Windows.Forms.Button();
+            this.SubjectID = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -225,6 +236,8 @@ namespace QuanLyDangKiMonHoc
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvParPhone)).BeginInit();
             this.tabPage8.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudy)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -239,12 +252,13 @@ namespace QuanLyDangKiMonHoc
             this.guna2TabControl1.Controls.Add(this.tabPage7);
             this.guna2TabControl1.Controls.Add(this.tabPage9);
             this.guna2TabControl1.Controls.Add(this.tabPage8);
+            this.guna2TabControl1.Controls.Add(this.tabPage10);
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2TabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(1351, 454);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1351, 537);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -274,7 +288,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage1.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage1.Size = new System.Drawing.Size(1163, 529);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Student";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -353,7 +367,7 @@ namespace QuanLyDangKiMonHoc
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label1.Location = new System.Drawing.Point(587, 27);
+            this.label1.Location = new System.Drawing.Point(587, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 23);
             this.label1.TabIndex = 20;
@@ -374,7 +388,7 @@ namespace QuanLyDangKiMonHoc
             // tbCredits
             // 
             this.tbCredits.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbCredits.Location = new System.Drawing.Point(683, 30);
+            this.tbCredits.Location = new System.Drawing.Point(683, 31);
             this.tbCredits.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbCredits.Name = "tbCredits";
             this.tbCredits.Size = new System.Drawing.Size(151, 22);
@@ -445,7 +459,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage2.Size = new System.Drawing.Size(1163, 529);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Teacher";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -585,9 +599,9 @@ namespace QuanLyDangKiMonHoc
             this.tabPage3.Location = new System.Drawing.Point(184, 4);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage3.Size = new System.Drawing.Size(1163, 529);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Course";
+            this.tabPage3.Text = "Subject";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panel11
@@ -606,7 +620,7 @@ namespace QuanLyDangKiMonHoc
             this.panel11.Controls.Add(this.tbSubjectName);
             this.panel11.Controls.Add(this.label11);
             this.panel11.Controls.Add(this.tbSubject);
-            this.panel11.Location = new System.Drawing.Point(72, 231);
+            this.panel11.Location = new System.Drawing.Point(71, 295);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(1037, 212);
             this.panel11.TabIndex = 51;
@@ -784,11 +798,11 @@ namespace QuanLyDangKiMonHoc
             this.dataGridViewTextBoxColumn5,
             this.Column4,
             this.Column6});
-            this.dgvCourse.Location = new System.Drawing.Point(3, 2);
+            this.dgvCourse.Location = new System.Drawing.Point(3, 7);
             this.dgvCourse.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvCourse.Name = "dgvCourse";
             this.dgvCourse.RowHeadersWidth = 51;
-            this.dgvCourse.Size = new System.Drawing.Size(1152, 197);
+            this.dgvCourse.Size = new System.Drawing.Size(1152, 233);
             this.dgvCourse.TabIndex = 43;
             this.dgvCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCourse_CellContentClick);
             this.dgvCourse.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvCourse_KeyDown);
@@ -839,7 +853,7 @@ namespace QuanLyDangKiMonHoc
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.panel3.Location = new System.Drawing.Point(0, 206);
+            this.panel3.Location = new System.Drawing.Point(0, 247);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1163, 11);
@@ -862,7 +876,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage6.Location = new System.Drawing.Point(184, 4);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage6.Size = new System.Drawing.Size(1163, 529);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Department";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -870,7 +884,7 @@ namespace QuanLyDangKiMonHoc
             // tbDepartment
             // 
             this.tbDepartment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbDepartment.Location = new System.Drawing.Point(317, 296);
+            this.tbDepartment.Location = new System.Drawing.Point(317, 337);
             this.tbDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbDepartment.Name = "tbDepartment";
             this.tbDepartment.Size = new System.Drawing.Size(177, 22);
@@ -879,7 +893,7 @@ namespace QuanLyDangKiMonHoc
             // tbFax
             // 
             this.tbFax.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbFax.Location = new System.Drawing.Point(317, 348);
+            this.tbFax.Location = new System.Drawing.Point(317, 389);
             this.tbFax.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbFax.Name = "tbFax";
             this.tbFax.Size = new System.Drawing.Size(177, 22);
@@ -888,7 +902,7 @@ namespace QuanLyDangKiMonHoc
             // tbEmail
             // 
             this.tbEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbEmail.Location = new System.Drawing.Point(762, 293);
+            this.tbEmail.Location = new System.Drawing.Point(762, 334);
             this.tbEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(176, 22);
@@ -897,7 +911,7 @@ namespace QuanLyDangKiMonHoc
             // tbPhone
             // 
             this.tbPhone.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.tbPhone.Location = new System.Drawing.Point(762, 348);
+            this.tbPhone.Location = new System.Drawing.Point(762, 389);
             this.tbPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.Size = new System.Drawing.Size(176, 22);
@@ -909,7 +923,7 @@ namespace QuanLyDangKiMonHoc
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label13.Location = new System.Drawing.Point(174, 296);
+            this.label13.Location = new System.Drawing.Point(174, 337);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(137, 23);
             this.label13.TabIndex = 46;
@@ -921,7 +935,7 @@ namespace QuanLyDangKiMonHoc
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label14.Location = new System.Drawing.Point(255, 345);
+            this.label14.Location = new System.Drawing.Point(255, 386);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(56, 23);
             this.label14.TabIndex = 44;
@@ -939,11 +953,11 @@ namespace QuanLyDangKiMonHoc
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
-            this.dgvDepartment.Location = new System.Drawing.Point(3, 2);
+            this.dgvDepartment.Location = new System.Drawing.Point(3, 7);
             this.dgvDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDepartment.Name = "dgvDepartment";
             this.dgvDepartment.RowHeadersWidth = 51;
-            this.dgvDepartment.Size = new System.Drawing.Size(1157, 227);
+            this.dgvDepartment.Size = new System.Drawing.Size(1157, 263);
             this.dgvDepartment.TabIndex = 43;
             this.dgvDepartment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartment_CellContentClick);
             this.dgvDepartment.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvDepartment_KeyDown);
@@ -983,7 +997,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateDepartment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateDepartment.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateDepartment.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateDepartment.Location = new System.Drawing.Point(915, 405);
+            this.btnUpdateDepartment.Location = new System.Drawing.Point(915, 488);
             this.btnUpdateDepartment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateDepartment.Name = "btnUpdateDepartment";
             this.btnUpdateDepartment.Size = new System.Drawing.Size(117, 39);
@@ -999,7 +1013,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddDepart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddDepart.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddDepart.ForeColor = System.Drawing.Color.White;
-            this.btnAddDepart.Location = new System.Drawing.Point(1038, 405);
+            this.btnAddDepart.Location = new System.Drawing.Point(1038, 488);
             this.btnAddDepart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddDepart.Name = "btnAddDepart";
             this.btnAddDepart.Size = new System.Drawing.Size(117, 39);
@@ -1014,7 +1028,7 @@ namespace QuanLyDangKiMonHoc
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label16.Location = new System.Drawing.Point(673, 293);
+            this.label16.Location = new System.Drawing.Point(673, 334);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(74, 23);
             this.label16.TabIndex = 36;
@@ -1026,7 +1040,7 @@ namespace QuanLyDangKiMonHoc
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label17.Location = new System.Drawing.Point(578, 348);
+            this.label17.Location = new System.Drawing.Point(578, 389);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(167, 23);
             this.label17.TabIndex = 34;
@@ -1036,10 +1050,10 @@ namespace QuanLyDangKiMonHoc
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.panel4.Location = new System.Drawing.Point(12, 233);
+            this.panel4.Location = new System.Drawing.Point(3, 274);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1148, 11);
+            this.panel4.Size = new System.Drawing.Size(1157, 11);
             this.panel4.TabIndex = 33;
             // 
             // tabPage4
@@ -1050,7 +1064,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage4.Location = new System.Drawing.Point(184, 4);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage4.Size = new System.Drawing.Size(1163, 529);
             this.tabPage4.TabIndex = 6;
             this.tabPage4.Text = "Class";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1079,7 +1093,7 @@ namespace QuanLyDangKiMonHoc
             this.panel12.Controls.Add(this.tbStartWeek);
             this.panel12.Controls.Add(this.tbEndTime);
             this.panel12.Controls.Add(this.tbEndWeek);
-            this.panel12.Location = new System.Drawing.Point(20, 200);
+            this.panel12.Location = new System.Drawing.Point(37, 263);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(1096, 243);
             this.panel12.TabIndex = 60;
@@ -1350,7 +1364,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvClass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvClass.Name = "dgvClass";
             this.dgvClass.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvClass.Size = new System.Drawing.Size(1157, 178);
+            this.dgvClass.Size = new System.Drawing.Size(1157, 219);
             this.dgvClass.TabIndex = 43;
             this.dgvClass.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClass_CellContentClick);
             this.dgvClass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvClass_KeyDown);
@@ -1429,7 +1443,7 @@ namespace QuanLyDangKiMonHoc
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.panel5.Location = new System.Drawing.Point(3, 184);
+            this.panel5.Location = new System.Drawing.Point(3, 225);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1157, 11);
@@ -1443,7 +1457,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage5.Location = new System.Drawing.Point(184, 4);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage5.Size = new System.Drawing.Size(1163, 529);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "Participant";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1466,7 +1480,7 @@ namespace QuanLyDangKiMonHoc
             this.panel13.Controls.Add(this.tbAddress);
             this.panel13.Controls.Add(this.label29);
             this.panel13.Controls.Add(this.tbUsername);
-            this.panel13.Location = new System.Drawing.Point(53, 222);
+            this.panel13.Location = new System.Drawing.Point(61, 285);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(1007, 221);
             this.panel13.TabIndex = 81;
@@ -1673,7 +1687,7 @@ namespace QuanLyDangKiMonHoc
             this.dgvParticipant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvParticipant.Name = "dgvParticipant";
             this.dgvParticipant.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvParticipant.Size = new System.Drawing.Size(1075, 197);
+            this.dgvParticipant.Size = new System.Drawing.Size(1152, 238);
             this.dgvParticipant.TabIndex = 67;
             this.dgvParticipant.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParticipant_CellContentClick);
             this.dgvParticipant.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvParticipant_KeyDown);
@@ -1731,10 +1745,10 @@ namespace QuanLyDangKiMonHoc
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.panel6.Location = new System.Drawing.Point(0, 206);
+            this.panel6.Location = new System.Drawing.Point(0, 247);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1083, 11);
+            this.panel6.Size = new System.Drawing.Size(1160, 11);
             this.panel6.TabIndex = 58;
             // 
             // tabPage7
@@ -1747,7 +1761,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage7.Location = new System.Drawing.Point(184, 4);
             this.tabPage7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage7.Size = new System.Drawing.Size(1163, 529);
             this.tabPage7.TabIndex = 8;
             this.tabPage7.Text = "Participant Email";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1758,7 +1772,7 @@ namespace QuanLyDangKiMonHoc
             this.panel14.Controls.Add(this.cbID);
             this.panel14.Controls.Add(this.label41);
             this.panel14.Controls.Add(this.tbEmailParticipant);
-            this.panel14.Location = new System.Drawing.Point(167, 243);
+            this.panel14.Location = new System.Drawing.Point(167, 315);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(865, 100);
             this.panel14.TabIndex = 83;
@@ -1812,7 +1826,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddParEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddParEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddParEmail.ForeColor = System.Drawing.Color.White;
-            this.btnAddParEmail.Location = new System.Drawing.Point(1038, 405);
+            this.btnAddParEmail.Location = new System.Drawing.Point(1038, 488);
             this.btnAddParEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddParEmail.Name = "btnAddParEmail";
             this.btnAddParEmail.Size = new System.Drawing.Size(117, 39);
@@ -1828,7 +1842,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParEmail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateParEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateParEmail.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateParEmail.Location = new System.Drawing.Point(915, 405);
+            this.btnUpdateParEmail.Location = new System.Drawing.Point(915, 488);
             this.btnUpdateParEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateParEmail.Name = "btnUpdateParEmail";
             this.btnUpdateParEmail.Size = new System.Drawing.Size(117, 39);
@@ -1841,7 +1855,7 @@ namespace QuanLyDangKiMonHoc
             // 
             this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.panel7.Location = new System.Drawing.Point(0, 206);
+            this.panel7.Location = new System.Drawing.Point(0, 247);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1155, 11);
@@ -1857,11 +1871,11 @@ namespace QuanLyDangKiMonHoc
             this.dgvParEmail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn23,
             this.Column11});
-            this.dgvParEmail.Location = new System.Drawing.Point(0, 2);
+            this.dgvParEmail.Location = new System.Drawing.Point(0, 7);
             this.dgvParEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvParEmail.Name = "dgvParEmail";
             this.dgvParEmail.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvParEmail.Size = new System.Drawing.Size(1155, 197);
+            this.dgvParEmail.Size = new System.Drawing.Size(1155, 233);
             this.dgvParEmail.TabIndex = 68;
             this.dgvParEmail.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParEmail_CellContentClick);
             this.dgvParEmail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvParEmail_KeyDown);
@@ -1895,7 +1909,7 @@ namespace QuanLyDangKiMonHoc
             this.tabPage9.Location = new System.Drawing.Point(184, 4);
             this.tabPage9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage9.Size = new System.Drawing.Size(1163, 529);
             this.tabPage9.TabIndex = 10;
             this.tabPage9.Text = "Participant Number";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -1908,7 +1922,7 @@ namespace QuanLyDangKiMonHoc
             this.panel15.Controls.Add(this.label30);
             this.panel15.Controls.Add(this.label38);
             this.panel15.Controls.Add(this.tbPhonePar);
-            this.panel15.Location = new System.Drawing.Point(176, 264);
+            this.panel15.Location = new System.Drawing.Point(184, 328);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(772, 100);
             this.panel15.TabIndex = 84;
@@ -1981,7 +1995,7 @@ namespace QuanLyDangKiMonHoc
             // 
             this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.panel8.Location = new System.Drawing.Point(0, 203);
+            this.panel8.Location = new System.Drawing.Point(0, 244);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(1160, 12);
@@ -1997,11 +2011,11 @@ namespace QuanLyDangKiMonHoc
             this.dgvParPhone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn24,
             this.dataGridViewTextBoxColumn25});
-            this.dgvParPhone.Location = new System.Drawing.Point(0, 2);
+            this.dgvParPhone.Location = new System.Drawing.Point(0, 7);
             this.dgvParPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvParPhone.Name = "dgvParPhone";
             this.dgvParPhone.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dgvParPhone.Size = new System.Drawing.Size(1155, 197);
+            this.dgvParPhone.Size = new System.Drawing.Size(1155, 233);
             this.dgvParPhone.TabIndex = 79;
             this.dgvParPhone.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvParPhone_CellContentClick);
             this.dgvParPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvParPhone_KeyDown);
@@ -2027,7 +2041,7 @@ namespace QuanLyDangKiMonHoc
             this.btnAddParPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddParPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddParPhone.ForeColor = System.Drawing.Color.White;
-            this.btnAddParPhone.Location = new System.Drawing.Point(1038, 405);
+            this.btnAddParPhone.Location = new System.Drawing.Point(1038, 488);
             this.btnAddParPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddParPhone.Name = "btnAddParPhone";
             this.btnAddParPhone.Size = new System.Drawing.Size(117, 39);
@@ -2042,7 +2056,7 @@ namespace QuanLyDangKiMonHoc
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label26.Location = new System.Drawing.Point(384, 238);
+            this.label26.Location = new System.Drawing.Point(384, 279);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(0, 23);
             this.label26.TabIndex = 74;
@@ -2053,7 +2067,7 @@ namespace QuanLyDangKiMonHoc
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label36.Location = new System.Drawing.Point(106, 320);
+            this.label36.Location = new System.Drawing.Point(106, 361);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(0, 23);
             this.label36.TabIndex = 70;
@@ -2064,7 +2078,7 @@ namespace QuanLyDangKiMonHoc
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label37.Location = new System.Drawing.Point(106, 276);
+            this.label37.Location = new System.Drawing.Point(106, 317);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(0, 23);
             this.label37.TabIndex = 68;
@@ -2076,7 +2090,7 @@ namespace QuanLyDangKiMonHoc
             this.btnUpdateParPhone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateParPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdateParPhone.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateParPhone.Location = new System.Drawing.Point(915, 405);
+            this.btnUpdateParPhone.Location = new System.Drawing.Point(915, 488);
             this.btnUpdateParPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateParPhone.Name = "btnUpdateParPhone";
             this.btnUpdateParPhone.Size = new System.Drawing.Size(117, 39);
@@ -2091,7 +2105,7 @@ namespace QuanLyDangKiMonHoc
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label39.Location = new System.Drawing.Point(742, 238);
+            this.label39.Location = new System.Drawing.Point(742, 279);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(0, 23);
             this.label39.TabIndex = 61;
@@ -2102,62 +2116,136 @@ namespace QuanLyDangKiMonHoc
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label27.Location = new System.Drawing.Point(108, 238);
+            this.label27.Location = new System.Drawing.Point(108, 279);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(0, 23);
             this.label27.TabIndex = 59;
             // 
             // tabPage8
             // 
+            this.tabPage8.Controls.Add(this.label46);
             this.tabPage8.Controls.Add(this.dateTimePicker2);
             this.tabPage8.Controls.Add(this.label45);
             this.tabPage8.Controls.Add(this.label44);
             this.tabPage8.Controls.Add(this.dateTimePicker1);
             this.tabPage8.Location = new System.Drawing.Point(184, 4);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1163, 446);
+            this.tabPage8.Size = new System.Drawing.Size(1163, 529);
             this.tabPage8.TabIndex = 11;
             this.tabPage8.Text = "Expiration Time";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dateTimePicker2.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(360, 221);
+            this.dateTimePicker2.Location = new System.Drawing.Point(360, 246);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(250, 32);
             this.dateTimePicker2.TabIndex = 3;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label45
             // 
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(309, 221);
+            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(294, 246);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(25, 17);
+            this.label45.Size = new System.Drawing.Size(59, 32);
             this.label45.TabIndex = 2;
-            this.label45.Text = "To";
+            this.label45.Text = "To:";
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(294, 156);
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(260, 156);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(40, 17);
+            this.label44.Size = new System.Drawing.Size(93, 32);
             this.label44.TabIndex = 1;
-            this.label44.Text = "From";
+            this.label44.Text = "From:";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm tt";
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(360, 156);
+            this.dateTimePicker1.Location = new System.Drawing.Point(360, 158);
             this.dateTimePicker1.MaxDate = new System.DateTime(3000, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(250, 32);
             this.dateTimePicker1.TabIndex = 0;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.label47);
+            this.tabPage10.Controls.Add(this.SubjectID);
+            this.tabPage10.Controls.Add(this.dataGridViewStudy);
+            this.tabPage10.Controls.Add(this.selectClass);
+            this.tabPage10.Controls.Add(this.selectSubject);
+            this.tabPage10.Location = new System.Drawing.Point(184, 4);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(1163, 529);
+            this.tabPage10.TabIndex = 12;
+            this.tabPage10.Text = "Study";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewStudy
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewStudy.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStudy.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewStudy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStudy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column12});
+            this.dataGridViewStudy.Location = new System.Drawing.Point(212, 150);
+            this.dataGridViewStudy.Name = "dataGridViewStudy";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewStudy.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewStudy.RowHeadersWidth = 51;
+            this.dataGridViewStudy.RowTemplate.Height = 24;
+            this.dataGridViewStudy.Size = new System.Drawing.Size(692, 284);
+            this.dataGridViewStudy.TabIndex = 2;
+            // 
+            // Column12
+            // 
+            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column12.HeaderText = "StudentID";
+            this.Column12.MinimumWidth = 6;
+            this.Column12.Name = "Column12";
+            // 
+            // selectClass
+            // 
+            this.selectClass.FormattingEnabled = true;
+            this.selectClass.Location = new System.Drawing.Point(822, 79);
+            this.selectClass.Name = "selectClass";
+            this.selectClass.Size = new System.Drawing.Size(193, 24);
+            this.selectClass.TabIndex = 1;
+            this.selectClass.SelectedIndexChanged += new System.EventHandler(this.selectClass_SelectedIndexChanged);
+            // 
+            // selectSubject
+            // 
+            this.selectSubject.FormattingEnabled = true;
+            this.selectSubject.Location = new System.Drawing.Point(249, 76);
+            this.selectSubject.Name = "selectSubject";
+            this.selectSubject.Size = new System.Drawing.Size(179, 24);
+            this.selectSubject.TabIndex = 0;
+            this.selectSubject.SelectedIndexChanged += new System.EventHandler(this.selectSubject_SelectedIndexChanged);
             // 
             // btnLogout
             // 
@@ -2166,7 +2254,7 @@ namespace QuanLyDangKiMonHoc
             this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogout.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.ForeColor = System.Drawing.Color.White;
-            this.btnLogout.Location = new System.Drawing.Point(1222, 459);
+            this.btnLogout.Location = new System.Drawing.Point(1230, 539);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(117, 38);
             this.btnLogout.TabIndex = 43;
@@ -2174,15 +2262,47 @@ namespace QuanLyDangKiMonHoc
             this.btnLogout.UseVisualStyleBackColor = false;
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // SubjectID
+            // 
+            this.SubjectID.AutoSize = true;
+            this.SubjectID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SubjectID.Location = new System.Drawing.Point(137, 76);
+            this.SubjectID.Name = "SubjectID";
+            this.SubjectID.Size = new System.Drawing.Size(106, 25);
+            this.SubjectID.TabIndex = 3;
+            this.SubjectID.Text = "SubjectID";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(693, 79);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(123, 25);
+            this.label47.TabIndex = 4;
+            this.label47.Text = "ClassName";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.BackColor = System.Drawing.Color.Transparent;
+            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(32, 34);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(746, 39);
+            this.label46.TabIndex = 4;
+            this.label46.Text = "Thiết lập thời gian cho phép đăng ký môn học";
+            // 
             // Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1351, 509);
+            this.ClientSize = new System.Drawing.Size(1351, 592);
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.guna2TabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.guna2TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -2219,6 +2339,9 @@ namespace QuanLyDangKiMonHoc
             ((System.ComponentModel.ISupportInitialize)(this.dgvParPhone)).EndInit();
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.tabPage10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudy)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2395,5 +2518,13 @@ namespace QuanLyDangKiMonHoc
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.DataGridView dataGridViewStudy;
+        private System.Windows.Forms.ComboBox selectClass;
+        private System.Windows.Forms.ComboBox selectSubject;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label SubjectID;
     }
 }

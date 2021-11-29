@@ -30,14 +30,6 @@ namespace QuanLyDangKiMonHoc
         }
 
 
-        private void CheckTime()
-        {
-            if (DateTime.Today > Admin.endDate1 || DateTime.Today < Admin.startDate1)
-            {
-                MessageBox.Show("Đã hết thời gian đăng ký!!!");
-                return;
-            }
-        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {

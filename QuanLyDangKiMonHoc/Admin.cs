@@ -21,10 +21,9 @@ namespace QuanLyDangKiMonHoc
             GetIDStudent();
             LoadStudents();
         }
-        //public static Guna.UI2.WinForms.Guna2DateTimePicker startDate;
-        //public static Guna.UI2.WinForms.Guna2DateTimePicker endDate;
-        public static DateTime startDate1;
-        public static DateTime endDate1;
+        
+        public static DateTime startDate1 = new DateTime(2021, 11, 28, 10, 00, 00);
+        public static DateTime endDate1 = new DateTime(2021,12,5,10,00,00);
 
         #region Xử lí Department
         private void LoadDepartments()
@@ -898,8 +897,8 @@ namespace QuanLyDangKiMonHoc
         }
         #endregion
 
-        #region Xử lí Course
-        private void LoadCourses()
+        #region Xử lí Subject
+        private void LoadSubject()
         {
             using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
             {
@@ -965,7 +964,7 @@ namespace QuanLyDangKiMonHoc
                         {
                             command.ExecuteNonQuery();
                             MessageBox.Show("Delete successfully");
-                            LoadCourses();
+                            LoadSubject();
                         }
                     }
                     catch (Exception ex)
@@ -1009,7 +1008,7 @@ namespace QuanLyDangKiMonHoc
                     cbDepartmentCourse.SelectedIndex = -1;
                     tbIDPre.Clear();
 
-                    LoadCourses();
+                    LoadSubject();
                 }
                 catch (Exception ex)
                 {
@@ -1046,7 +1045,7 @@ namespace QuanLyDangKiMonHoc
                     {
                         command.ExecuteNonQuery();
                         MessageBox.Show("Update successfully");
-                        LoadCourses();
+                        LoadSubject();
                     }
                 }
                 catch (Exception ex)
@@ -1297,10 +1296,10 @@ namespace QuanLyDangKiMonHoc
                 GetIDTeacher();
                 LoadTeachers();
             }
-            else if (text == "Course")
+            else if (text == "Subject")
             {
                 GetDepartment1();
-                LoadCourses();
+                LoadSubject();
             }
             else if (text == "Class")
             {
@@ -1311,6 +1310,10 @@ namespace QuanLyDangKiMonHoc
             else if (text == "Expiration Time")
             {
                 LoadTime();
+            }
+            else if (text == "Study")
+            {
+                GetSub();
             }
         }
 
@@ -1358,6 +1361,66 @@ namespace QuanLyDangKiMonHoc
         {
             dateTimePicker1.Value = startDate1;
             dateTimePicker2.Value = endDate1;
+        }
+
+        #region Xử lý Study
+        private void GetSub()
+        {
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+            {
+                string query = "select SubjectID from Subject";
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter ada = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                ada.Fill(dt);
+                selectSubject.DataSource = dt;
+                selectSubject.DisplayMember = "SubjectID";
+                connection.Close();
+            }
+        }
+
+        private void selectSubject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+            {
+                string query = "select ClassName from Subject AS S, Class AS C where S.SubjectID = C.SubjectID and C.SubjectID = '" + selectSubject.Text + "'";
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataAdapter ada = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                ada.Fill(dt);
+                selectClass.DataSource = dt;
+                selectClass.DisplayMember = "ClassName";
+                connection.Close();
+            }
+        }
+
+
+        private void LoadStudy()
+        {
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+            {
+                string query = "select StudentID from Study where ClassName= '" + selectClass.Text + "'";
+                dataGridViewStudy.Rows.Clear();
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader dr = command.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    dataGridViewStudy.Rows.Add(dr["StudentID"]);
+                }
+                dr.Close();
+                connection.Close();
+            }
+        }
+
+        #endregion
+
+        private void selectClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadStudy();
         }
     }
 }
