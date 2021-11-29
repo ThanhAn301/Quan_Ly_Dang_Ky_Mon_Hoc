@@ -28,6 +28,17 @@ namespace QuanLyDangKiMonHoc
                 MessageBox.Show("Bạn vui lòng nhập mật khẩu");
             }
         }
+
+
+        private void CheckTime()
+        {
+            if (DateTime.Today > Admin.endDate1 || DateTime.Today < Admin.startDate1)
+            {
+                MessageBox.Show("Đã hết thời gian đăng ký!!!");
+                return;
+            }
+        }
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Check();
@@ -42,30 +53,38 @@ namespace QuanLyDangKiMonHoc
                     this.Show();
                 }
                 else {
-                    using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+                    if (DateTime.Today > Admin.endDate1 || DateTime.Today < Admin.startDate1)
                     {
-                        string query = "select ID,Password_Participant from Participant,Student where StudentID = ID and ID = '" + txtUsername.Text + "' and Password_Participant = '" + txtPassWord.Text + "'";
-
-                        connection.Open();
-                        SqlDataAdapter ada = new SqlDataAdapter(query, connection);
-                        DataTable dt = new DataTable();
-                        ada.Fill(dt);
-
-                        if (dt.Rows.Count != 1)
+                        MessageBox.Show("Đã hết thời gian đăng ký!!!");
+                        return;
+                    }
+                    else
+                    {
+                        using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
                         {
-                            MessageBox.Show("Tài khoản hoặc mật khẩu bị sai");
-                            return;
+                            string query = "select ID,Password_Participant from Participant,Student where StudentID = ID and ID = '" + txtUsername.Text + "' and Password_Participant = '" + txtPassWord.Text + "'";
+
+                            connection.Open();
+                            SqlDataAdapter ada = new SqlDataAdapter(query, connection);
+                            DataTable dt = new DataTable();
+                            ada.Fill(dt);
+
+                            if (dt.Rows.Count != 1)
+                            {
+                                MessageBox.Show("Tài khoản hoặc mật khẩu bị sai");
+                                return;
+                            }
+                            else
+                            {
+                                HomePage homePage = new HomePage(txtUsername.Text);
+                                this.Hide();
+                                homePage.ShowDialog();
+                                this.Show();
+                            }
+
+                            connection.Close();
+
                         }
-                        else
-                        {
-
-                            HomePage homePage = new HomePage(txtUsername.Text);
-                            homePage.Show();
-                            this.Hide();
-                        }
-
-                        connection.Close();
-
                     }
                 }
             }

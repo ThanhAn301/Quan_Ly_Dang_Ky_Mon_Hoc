@@ -21,12 +21,11 @@ namespace QuanLyDangKiMonHoc
             this.beforeClass = beforeClass;
             InitializeComponent();
         }
-
+        
         private string idStudent;
         private HomePage HomePage;
         private bool isChange;
         private string beforeClass;
-
         private void dataGridViewClass_Click(object sender, EventArgs e)
         {
             txtClass.Text = dataGridViewClass.CurrentRow.Cells[0].Value.ToString();

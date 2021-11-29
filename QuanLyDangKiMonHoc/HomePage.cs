@@ -267,9 +267,7 @@ namespace QuanLyDangKiMonHoc
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            Login f = new Login();
-            this.Hide();
-            f.Show();
+            this.Close();
         }
 
         private void dataGridViewRegistered_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

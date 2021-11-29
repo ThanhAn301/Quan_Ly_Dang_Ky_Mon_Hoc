@@ -21,8 +21,10 @@ namespace QuanLyDangKiMonHoc
             GetIDStudent();
             LoadStudents();
         }
-        public static Guna.UI2.WinForms.Guna2DateTimePicker date1;
-        public static Guna.UI2.WinForms.Guna2DateTimePicker date2;
+        //public static Guna.UI2.WinForms.Guna2DateTimePicker startDate;
+        //public static Guna.UI2.WinForms.Guna2DateTimePicker endDate;
+        public static DateTime startDate1;
+        public static DateTime endDate1;
 
         #region Xử lí Department
         private void LoadDepartments()
@@ -1306,6 +1308,10 @@ namespace QuanLyDangKiMonHoc
                 GetIDTeacher1();
                 LoadClass();
             }
+            else if (text == "Expiration Time")
+            {
+                LoadTime();
+            }
         }
 
         private void tbEndTime_TextChanged(object sender, EventArgs e)
@@ -1336,6 +1342,22 @@ namespace QuanLyDangKiMonHoc
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            startDate1 = dateTimePicker1.Value;
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+            endDate1 = dateTimePicker2.Value;
+        }
+
+        private void LoadTime()
+        {
+            dateTimePicker1.Value = startDate1;
+            dateTimePicker2.Value = endDate1;
         }
     }
 }
