@@ -45,13 +45,13 @@ namespace QuanLyDangKiMonHoc
                     this.Show();
                 }
                 else {
-                    if (DateTime.Today > Admin.endDate1 || DateTime.Today < Admin.startDate1)
-                    {
-                        MessageBox.Show("Đã hết thời gian đăng ký!!!");
-                        return;
-                    }
-                    else
-                    {
+                    //if (DateTime.Today > Admin.endDate1 || DateTime.Today < Admin.startDate1)
+                    //{
+                    //    MessageBox.Show("Đã hết thời gian đăng ký!!!");
+                    //    return;
+                    //}
+                    //else
+                    //{
                         using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
                         {
                             string query = "select ID,Password_Participant from Participant,Student where StudentID = ID and ID = '" + txtUsername.Text + "' and Password_Participant = '" + txtPassWord.Text + "'";
@@ -78,7 +78,7 @@ namespace QuanLyDangKiMonHoc
 
                         }
                     }
-                }
+                //}
             }
         }
     }

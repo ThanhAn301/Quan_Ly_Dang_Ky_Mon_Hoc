@@ -79,60 +79,67 @@ namespace QuanLyDangKiMonHoc
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            if (!isChange)
+            if (DateTime.Today > Admin.endDate1 || DateTime.Today < Admin.startDate1)
             {
-                if (MessageBox.Show("Bạn muốn chọn lớp này phải không", "Chọn lớp", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
-                    {
-                        connection.Open();
-                        var command = new SqlCommand("DKYHOC", connection);
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@studentID", idStudent);
-                        command.Parameters.AddWithValue("@classname", dataGridViewClass.CurrentRow.Cells[0].Value.ToString());
-                        try
-                        {
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Chọn môn thành công");
-                            HomePage.LoadSubjectRegistered();
-                            this.Dispose();
-                            connection.Close();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                            connection.Close();
-                        }
-
-                    }
-                }
+                MessageBox.Show("Đã hết thời gian đăng ký!!!");
+                return;
             }
             else
             {
-                if (MessageBox.Show("Bạn muốn chọn lớp này phải không", "Chọn lớp", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (!isChange)
                 {
-                    using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+                    if (MessageBox.Show("Bạn muốn chọn lớp này phải không", "Chọn lớp", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        connection.Open();
-                        var command = new SqlCommand("ChangeClassName", connection);
-                        command.CommandType = CommandType.StoredProcedure;
-                        command.Parameters.AddWithValue("@StudentId", idStudent);
-                        command.Parameters.AddWithValue("@ClassNameBefore", beforeClass);
-                        command.Parameters.AddWithValue("@ClassNameAfter", dataGridViewClass.CurrentRow.Cells[0].Value.ToString());
-                        try
+                        using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
                         {
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Chọn môn thành công");
-                            HomePage.LoadSubjectRegistered();
-                            this.Dispose();
-                            connection.Close();
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                            connection.Close();
-                        }
+                            connection.Open();
+                            var command = new SqlCommand("DKYHOC", connection);
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.AddWithValue("@studentID", idStudent);
+                            command.Parameters.AddWithValue("@classname", dataGridViewClass.CurrentRow.Cells[0].Value.ToString());
+                            try
+                            {
+                                command.ExecuteNonQuery();
+                                MessageBox.Show("Chọn môn thành công");
+                                HomePage.LoadSubjectRegistered();
+                                
+                                connection.Close();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                                connection.Close();
+                            }
 
+                        }
+                    }
+                }
+                else
+                {
+                    if (MessageBox.Show("Bạn muốn chọn lớp này phải không", "Chọn lớp", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+                        {
+                            connection.Open();
+                            var command = new SqlCommand("ChangeClassName", connection);
+                            command.CommandType = CommandType.StoredProcedure;
+                            command.Parameters.AddWithValue("@StudentId", idStudent);
+                            command.Parameters.AddWithValue("@ClassNameBefore", beforeClass);
+                            command.Parameters.AddWithValue("@ClassNameAfter", dataGridViewClass.CurrentRow.Cells[0].Value.ToString());
+                            try
+                            {
+                                command.ExecuteNonQuery();
+                                MessageBox.Show("Chọn lớp thành công");
+                                HomePage.LoadSubjectRegistered();
+                                connection.Close();
+                            }
+                            catch (Exception ex)
+                            {
+                                MessageBox.Show(ex.Message);
+                                connection.Close();
+                            }
+
+                        }
                     }
                 }
             }

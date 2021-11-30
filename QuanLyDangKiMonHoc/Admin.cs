@@ -1313,6 +1313,10 @@ namespace QuanLyDangKiMonHoc
             }
             else if (text == "Study")
             {
+                if (DateTime.Today > endDate1 || DateTime.Today < startDate1)
+                {
+                    CheckStudy();
+                }
                 GetSub();
             }
         }
@@ -1350,11 +1354,19 @@ namespace QuanLyDangKiMonHoc
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             startDate1 = dateTimePicker1.Value;
+            if (DateTime.Today < startDate1)
+            {
+                CheckStudy();
+            }
         }
 
         private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
             endDate1 = dateTimePicker2.Value;
+            if (DateTime.Today > endDate1)
+            {
+                CheckStudy();
+            }
         }
 
         private void LoadTime()
@@ -1412,6 +1424,18 @@ namespace QuanLyDangKiMonHoc
                     dataGridViewStudy.Rows.Add(dr["StudentID"]);
                 }
                 dr.Close();
+                connection.Close();
+            }
+        }
+
+        private void CheckStudy()
+        {
+            using (SqlConnection connection = new SqlConnection(@"Data Source=DESKTOP-DJCB51T\TEST;Initial Catalog=QLDKMH;Integrated Security=True"))
+            {
+                connection.Open();
+                var command = new SqlCommand("CancleTheSubjectAfterTimeOut", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.ExecuteNonQuery();
                 connection.Close();
             }
         }

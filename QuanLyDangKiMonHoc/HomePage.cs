@@ -126,16 +126,6 @@ namespace QuanLyDangKiMonHoc
             SearchSubject();
         }
 
-        private bool CheckMonTrung(string idSubject)
-        {
-            foreach(DataGridViewRow dr in dataGridViewRegistered.Rows)
-            {
-                if (dr.Cells[2].Value.ToString() == idSubject)
-                    return true;
-            }
-
-            return false;
-        }
 
         private void dataGridViewRegistered_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

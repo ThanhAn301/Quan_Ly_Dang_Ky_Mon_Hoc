@@ -591,14 +591,13 @@ AS
     from Study
     GROUP BY ClassName
 
-    delete from Class
-    WHERE Class.ClassName IN (
+    delete from Study
+    WHERE Study.ClassName IN (
                             select A.ClassName
                             from @NumberStudentInClass A
                             WHERE A.NumberStudent <= ((select B.MaximumStudents from Class B WHERE B.ClassName = A.ClassName)/2)
     )
 GO
-
 --- hàm kiểm tra xem thử 2 lớp có trùng lịch hay không?
 create FUNCTION FalseDayTimeStudy(
 	@SelectClassName1 varchar(10)
